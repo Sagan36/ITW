@@ -1,0 +1,35 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .botao {
+    display: block;
+    margin: 10px auto;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 30px 50px;
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .botao:hover {
+    background-color: red;
+    color: white;
+  }
