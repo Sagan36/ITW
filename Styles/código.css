@@ -7,7 +7,7 @@ body {
     padding: 0;
   }
   
-  .container {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@ body {
     height: 100vh;
   }
   
-  .botao {
+.botao {
     display: block;
     margin: 10px auto;
     background-color: transparent;
@@ -29,7 +29,15 @@ body {
     transition: all 0.3s ease;
   }
   
-  .botao:hover {
+.botao:hover {
     background-color: red;
     color: white;
   }
+  
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
