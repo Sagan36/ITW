@@ -1,14 +1,12 @@
 body {
-<<<<<<< HEAD
     background-color: #5418a3;
     background-image: url("Media/imachameleon.jpeg");
     color: #fff;
-=======
->>>>>>> 0b51e14a724aad1d73057d93db1187742ff9532d
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   
 .container {
@@ -23,10 +21,10 @@ body {
     display: block;
     margin: 10px auto;
     background-color: transparent;
-    color: red;
-    border: 2px solid red;
+    color: rgb(218, 143, 14);
+    border: 2px solid rgb(213, 132, 11);
     border-radius: 50%;
-    padding: 30px 50px;
+    padding: 30px 30px;
     font-size: 24px;
     text-transform: uppercase;
     cursor: pointer;
@@ -34,10 +32,9 @@ body {
   }
   
 .botao:hover {
-    background-color: red;
+    background-color: rgb(230, 164, 11);
     color: white;
   }
-<<<<<<< HEAD
   .dropdown {
     position: relative;
     display: inline-block;
@@ -109,6 +106,25 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-=======
+
+.leaderboard-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
   
->>>>>>> 0b51e14a724aad1d73057d93db1187742ff9532d
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+th, td {
+    border: 1px solid #ff0000;
+    text-align: left;
+    padding: 8px;
+  }
+  
+th{
+    background-color: #ff0000;
+  }
