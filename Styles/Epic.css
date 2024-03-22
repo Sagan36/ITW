@@ -59,6 +59,7 @@
 }
 
 .top-left-button {
+    text-decoration: none;
     position: fixed;
     top: 20px;
     left: 20px;
