@@ -108,7 +108,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
+.img-nos {
+  height: 400;
+  width: 200;
+}
 .leaderboard-container {
     background-color: #f2f2f2;
     padding: 20px;
