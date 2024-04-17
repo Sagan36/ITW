@@ -10,26 +10,28 @@
     <title>Jogo da Memória</title>
 </head>
 <body>
-    <a href="Menu.html" class="top-left-button">Voltar</a>
+    <a href="Index.html" class="top-left-button">Voltar</a>
     <h1>Your Player Info</h1>
-    <div>
-        <a href="SinglePlayer.html"><button class="botao">Settings</button></a>
-    </div> 
-    <div class="container">
-        <form action="processar_login.php" method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div>
-                <input type="submit" value="Login">
-            </div>
-        </form>
-        <p><a href="esqueci_minha_senha.html">Esqueci-me da palavra-passe</a></p>
-    </div> 
-</body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="#" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <select name="faixa etaria" required>
+          <option value="" disabled selected> Age group</option>
+          <option value="criança">criança(0-12)</option>
+          <option value="adolescente">adolecesnte(13-17) </option>
+          <option value="adulto">adulto(18-64)</option>
+          <option value="idoso">idoso(65+anos)</option>
+        </select>
+        <select name="gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+          <option value="other">Outro</option>
+        </select>
+        <a href="Menu.html" class="buttonLog"><button type="submit">Login</button></a>
+      </form>
+    </div>
+  </body>
 </html>

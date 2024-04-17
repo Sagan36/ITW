@@ -3,7 +3,7 @@
     display: block;
     margin: 10px auto;
     color: rgb(255, 255, 255);
-    border: rgba(16, 160, 35, 0.719);
+    border: rgba(146, 222, 243, 0.719);
     background-color: transparent;
     padding: 10px 40px;
     font-size: 24px;
@@ -51,8 +51,6 @@
     padding-right: 33px;
 }
 
-
-
 #button3 {
     padding-left: 75px;
     padding-right: 75px;
@@ -62,7 +60,8 @@
     padding-left: 22px;
     padding-right: 22px;
 }
-
+/*=============================*/
+/*Butoes para a pagina informacoes.*/
 #buttonUS {
     padding-left: 110px;
     padding-right: 110px;
@@ -71,6 +70,12 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+#buttonLog{
+    padding-left: 10px;
+    padding-right: 10px;
+} 
+
 /*=============================*/
 /* Butões selectivos */
 .dropdown {
@@ -80,46 +85,27 @@
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
     font-size: 24px;
-    border: none;
     cursor: pointer;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
 
 #TempoBTN{
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
 }
 
 #TabuleiroBTN{
     padding-right: 20px;
     padding-left: 20px;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
+    text-align: center;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 /*=============================*/
 .shinybutton {
 
@@ -130,8 +116,6 @@
 
 
 }
-
-
 
 
 
@@ -150,3 +134,47 @@
     cursor: pointer;
 }
 /*=============================*/
+
+
+/* caixa de login */
+ 
+
+
+.login-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .login-container h2 {
+    margin-top: 0;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"],
+  .login-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  .login-container button {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #45a049;
+  }
+ 

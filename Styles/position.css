@@ -34,20 +34,29 @@ header{
 }
 /*================================================================*/
 /*Grid feita para a pagina "sobre nós"*/
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .grid-img-info{
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto ;
     grid-template-areas: 
     "Img Info-Gonçalo"
     "Img Info-Dinis"
-    "Img Info-Ricardo"
+    "Img Info-Ricardo";
+    grid-gap: 20px;
+    align-items: center
     ;       
 }
 
 #Img{
     grid-area: Img;
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     display: block;
 }
@@ -61,7 +70,12 @@ header{
 }
 
 #Info-Ricardo{
-    grid-area: Info-Ricardo
+    grid-area: Info-Ricardo;
+}
+
+.info h2 {
+    color: lightblue;
+    padding: 10px;
 }
 
 
@@ -77,33 +91,78 @@ header{
 
 .singleplayer{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     grid-template-rows: auto auto auto auto;
     grid-template-areas: 
-    "Header" "Header"
-    "TituloTempo" "Tempo"
-    "TituloTabuleiro" "Tabuleiro"
-    "StartButton" "StartButton" 
+    "Header Header"
+    "TituloTabuleiro Tabuleiro"
+    "TituloTempo Tempo"
+    "StartButton StartButton" 
     ;
+    border: 20px solid rgb(255, 0, 0); /* Example border with black color */
+    align-items: center;
 }
+
     
 Header{
     grid-area: Header;
+    padding-bottom: 20px;
+
 }
 
 #TituloTempo{
     grid-area: TituloTempo;
+
+
 }
 
 #Tempo{
     grid-area: Tempo;
+    background-color: black;
+
 }
 
 #TituloTabuleiro{
     grid-area: TituloTabuleiro;
+    background-color: black
+}
+
+#Tabuleiro{
+    grid-area: Tabuleiro;
+
 }
 
 #StartButton{
-    grid-area: StartButton
+    grid-area: StartButton;
 }
+
+
+
 /*================================================================*/
+/* Grid com o tabuleiro de jogo */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*4 colunas alinhadas */
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, 1fr); /*5 colunas alinhadas */
+    width: 400px;
+    height: 500px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 5px;
+}

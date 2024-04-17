@@ -7,13 +7,18 @@
     <link rel="stylesheet" type="text/css" href="Styles/Buttons.css">
     <link rel="stylesheet" type="text/css" href="Styles/BackGrounds.css">
     <link rel="stylesheet" type="text/css" href="Styles/position.css">
-    <title>Scroll Button</title>
+    <link rel="stylesheet" type="text/css" href="Styles/Text.css">
+    <title>Jogo da Memoria</title>
 </head>
 <body>  
     <a href="Menu.html"><button class="top-left-button">Voltar</button></a>
-    <div class="center-content">
-        <strong>Tabuleiro</strong>
-        <div class="dropdown">
+<div class="center-content">
+<div class="singleplayer">
+        <header><h1>Customizacoes</h1></header>
+        <div id="TituloTabuleiro">
+            <h2>Tabuleiro</h2>
+        </div>
+        <div class="dropdown" id="Tabuleiro">
             <form>
                 <select class="dropbtn" id="TabuleiroBTN">
                     <option value="3x3">3x3</option>
@@ -26,10 +31,12 @@
                 </select>
             </form>
         </div>
-        <strong>Tempo</strong>
-        <div class="dropdown" id="TempoBTN">
+        <div id="TituloTempo">
+            <h2>Tempo</h2>
+        </div>
+        <div class="dropdown" id="Tempo">
             <form>
-                <select class="dropbtn">
+                <select class="dropbtn" id="TempoBTN">
                     <option value="0:10">0:10</option>
                     <option value="1:00">1:00</option>
                     <option value="2:00">2:00</option>
@@ -39,12 +46,13 @@
                 </select>
             </form>
         </div>
-        <div class="start-button-container">
+        <div class="start-button-container" id="StartButton">
             <div class="dropdown">
                 <a href="Grelha de jogo.html"><button class="shinybutton">COMEÇAR</button></a>
             </div>
         </div>
-    </div>
+</div>
+</div>
 </body>
 </html>
 
