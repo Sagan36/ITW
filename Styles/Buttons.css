@@ -63,34 +63,16 @@
     padding-right: 22px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* The selection buttons */
+#buttonUS {
+    padding-left: 110px;
+    padding-right: 110px;
+}
+#buttonIF{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*=============================*/
+/* Butões selectivos */
 .dropdown {
     position: relative;
   }
@@ -98,12 +80,23 @@
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 12px;
-    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
+#TempoBTN{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#TabuleiroBTN{
+    padding-right: 20px;
+    padding-left: 20px;
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -137,6 +130,12 @@
 
 
 }
+
+
+
+
+
+
 /* Botao de voltar */
 .top-left-button {
     text-decoration: none;

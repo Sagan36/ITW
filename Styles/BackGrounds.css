@@ -29,3 +29,16 @@ html {
 h1{
     font-size: 60px;
 }
+
+.grid-img{
+    grid-column: 1 / 2;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid-info{
+    grid-column: 2 / 5;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

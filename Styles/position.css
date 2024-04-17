@@ -33,3 +33,77 @@ header{
     grid-area: Informacoes;
 }
 /*================================================================*/
+/*Grid feita para a pagina "sobre nós"*/
+.grid-img-info{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "Img Info-Gonçalo"
+    "Img Info-Dinis"
+    "Img Info-Ricardo"
+    ;       
+}
+
+#Img{
+    grid-area: Img;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#Info-Gonçalo{
+    grid-area: Info-Gonçalo;
+}
+
+#Info-Dinis{
+    grid-area: Info-Dinis;
+}
+
+#Info-Ricardo{
+    grid-area: Info-Ricardo
+}
+
+
+
+
+
+
+
+
+
+/*================================================================*/
+/*Grid para os butões da página"SinglePlayer"*/
+
+.singleplayer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "Header" "Header"
+    "TituloTempo" "Tempo"
+    "TituloTabuleiro" "Tabuleiro"
+    "StartButton" "StartButton" 
+    ;
+}
+    
+Header{
+    grid-area: Header;
+}
+
+#TituloTempo{
+    grid-area: TituloTempo;
+}
+
+#Tempo{
+    grid-area: Tempo;
+}
+
+#TituloTabuleiro{
+    grid-area: TituloTabuleiro;
+}
+
+#StartButton{
+    grid-area: StartButton
+}
+/*================================================================*/
