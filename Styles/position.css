@@ -35,12 +35,6 @@ header{
 /*================================================================*/
 /*Grid feita para a pagina "sobre nós"*/
 
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 .grid-img-info{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -49,10 +43,15 @@ body {
     "Img Info-Gonçalo"
     "Img Info-Dinis"
     "Img Info-Ricardo";
+
     grid-gap: 20px;
-    align-items: center
-    ;       
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
 }
+           
+
 
 #Img{
     grid-area: Img;
@@ -141,14 +140,6 @@ Header{
 /*================================================================*/
 /* Grid com o tabuleiro de jogo */
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
 
 .board {
     display: grid;
@@ -157,7 +148,14 @@ body {
     grid-template-rows: repeat(5, 1fr); /*5 colunas alinhadas */
     width: 400px;
     height: 500px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
+
 
 .card {
     display: flex;
