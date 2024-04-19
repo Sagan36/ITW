@@ -5,8 +5,8 @@
     color: rgb(255, 255, 255);
     border: rgba(146, 222, 243, 0.719);
     background-color: transparent;
-    padding: 10px 40px;
-    font-size: 24px;
+    padding: 10px 30px;
+    font-size: 24rm;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -26,12 +26,12 @@
     margin: 10px auto;
     color: rgb(255, 255, 255);
     background-color: rgb(50, 70, 248);
-    font-size: 24px;
+    font-size: 15px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.5s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .ndButton:hover {
@@ -47,18 +47,18 @@
 
 
 #button2 {
-    padding-left: 33px;
-    padding-right: 33px;
+    padding-left: 28px;
+    padding-right: 28px;
 }
 
 #button3 {
-    padding-left: 75px;
-    padding-right: 75px;
+    padding-left: 53px;
+    padding-right: 53px;
 }
 
 #button4 {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /*=============================*/
 /*Butoes para a pagina informacoes.*/
@@ -94,8 +94,8 @@
 
 
 #TempoBTN{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
     text-align: center;
 }
 
@@ -149,24 +149,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .login-container h2 {
-    margin-top: 0;
-  }
-  
-  .login-container input[type="text"],
-  .login-container input[type="password"],
-  .login-container select {
+    margin-top: 50px; 
+}
+
+.login-container h2 {
+    margin-top: 10px; 
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container select {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-sizing: border-box;
-  }
-  
-  .login-container button {
+}
+
+.login-container button {
     width: 100%;
     background-color: #4caf50;
     color: #fff;
@@ -174,8 +175,8 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-  }
-  
-  .login-container button:hover {
+}
+
+.login-container button:hover {
     background-color: #45a049;
-  }
+}

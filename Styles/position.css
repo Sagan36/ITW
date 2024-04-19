@@ -11,9 +11,11 @@
     "Informacoes"
     ;
 }
+h1{
+    font-size: 3rem;
+}
 header{
     grid-area: Header;
-    padding: 10px;
 }
 
 #SinglePlayer{
@@ -32,6 +34,46 @@ header{
 #Informacoes{
     grid-area: Informacoes;
 }
+@media screen and (max-width:599px){
+    .menu{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+        "Header"
+        "SinglePlayer"
+        "MultiPlayer"
+        "Tabelas"
+        "Informacoes"
+        ;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    header{
+        grid-area: Header;
+    }
+    
+    #SinglePlayer{
+        grid-area: SinglePlayer;
+    }
+    
+    #MultiPlayer{
+        grid-area: MultiPlayer;
+    }
+    
+    #Tabelas{
+        grid-area: Tabelas;
+    }
+    
+    #Informacoes{
+        grid-area: Informacoes;
+    }
+
+
+}
+
+
 /*================================================================*/
 /*Grid feita para a pagina "sobre nós"*/
 
@@ -77,53 +119,91 @@ header{
     padding: 10px;
 }
 
-
-
-
-
-
-
+@media screen and(min-width:600px){
+    .grid-img-info{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto ;
+        grid-template-areas: 
+        "Img Info-Gonçalo"
+        "Img Info-Dinis"
+        "Img Info-Ricardo";
+    
+        grid-gap: 20px;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    #Img{
+        grid-area: Img;
+        max-width: 20%;
+        height: auto;
+        display: block;
+    }
+    
+    #Info-Gonçalo{
+        grid-area: Info-Gonçalo;
+    }
+    
+    #Info-Dinis{
+        grid-area: Info-Dinis;
+    }
+    
+    #Info-Ricardo{
+        grid-area: Info-Ricardo;
+    }
+    
+    .info h2 {
+        color: lightblue;
+        padding: 10px;
+    }
+}
 
 
 /*================================================================*/
 /*Grid para os butões da página"SinglePlayer"*/
 
+
+
 .singleplayer{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 30% auto auto auto;
     grid-template-areas: 
     "Header Header"
     "TituloTabuleiro Tabuleiro"
     "TituloTempo Tempo"
     "StartButton StartButton" 
     ;
-    border: 20px solid rgb(255, 0, 0); /* Example border with black color */
     align-items: center;
+    padding: 50px;
 }
 
     
 Header{
     grid-area: Header;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
 }
 
+
 #TituloTempo{
     grid-area: TituloTempo;
-
 
 }
 
 #Tempo{
     grid-area: Tempo;
-    background-color: black;
+    padding-left: 10px;
+    
 
 }
 
 #TituloTabuleiro{
     grid-area: TituloTabuleiro;
-    background-color: black
+    padding-right: 30px;
 }
 
 #Tabuleiro{
@@ -135,25 +215,36 @@ Header{
     grid-area: StartButton;
 }
 
+@media screen and (max-width:599px){
+    .singleplayer{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% auto auto auto;
+        grid-template-areas: 
+        "Header Header"
+        "TituloTabuleiro Tabuleiro"
+        "TituloTempo Tempo"
+        "StartButton StartButton" 
+        ;
+    
+        align-items: center;
+        padding: 42px;
+    }
+}
+
 
 
 /*================================================================*/
 /* Grid com o tabuleiro de jogo */
 
-
+    
 .board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /*4 colunas alinhadas */
-    grid-gap: 10px;
-    grid-template-rows: repeat(5, 1fr); /*5 colunas alinhadas */
-    width: 400px;
-    height: 500px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 20px;
     height: 100vh;
-    margin: 0;
+    grid-template-rows:auto auto auto auto auto;
+    box-sizing: border-box;
 }
 
 
@@ -162,5 +253,166 @@ Header{
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border-color: aqua;
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombreado na carta */
+    background-image: url("Media/backcard.jpeg");
+  
 }
+
+#card1 {
+    grid-area: card1;
+    }
+#card2 {
+    grid-area: card2;
+    }
+
+#card3 {
+    grid-area: card3;
+    }
+
+#card4 {
+    grid-area: card4;
+    }   
+
+#card5 {
+    grid-area: card5;
+    }
+
+#card6 {
+    grid-area: card6;
+    }
+
+#card7 {
+    grid-area: card7;
+    }
+
+#card8 {
+    grid-area: card8;
+    }
+
+#card9 {
+    grid-area: card9;
+    }
+
+#card10 {
+    grid-area: card10;
+    }
+
+#card11 {
+    grid-area: card11;
+    }
+
+#card12 {
+    grid-area: card12;
+    }
+
+#card13 {
+    grid-area: card13;
+    }
+
+#card14 {
+    grid-area: card14;
+    }
+
+#card15 {
+    grid-area: card15;
+    }
+
+#card16 {
+    grid-area: card16;
+    }
+
+#card17 {
+    grid-area: card17;
+    }
+
+#card18 {
+    grid-area: card18;
+    }
+
+#card19 {
+    grid-area: card19;
+    }
+
+#card20 {
+    grid-area: card20;
+    }
+
+
+
+
+
+/*================================================================*/
+/* Grid para o nome dos jogad */
+
+.board2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    gap: 20px;
+    height: 100vh;
+
+    grid-template-areas: 
+    "player1 name1"
+    "player2 name2"
+    "player3 name3"
+    "player4 name4"
+    ;
+    
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border-color: aqua;
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombreado na carta */
+    background-image: "Media/pokemonBackGround.png";
+}
+
+
+#name1 {
+    grid-area: card1;
+    }
+#name2 {
+    grid-area: card2;
+    }
+
+#name3 {
+    grid-area: card3;
+    }
+
+#name4 {
+    grid-area: card4;
+    }   
+
+#name5 {
+    grid-area: card5;
+    }
+
+#name6 {
+    grid-area: card6;
+    }
+
+#name7 {
+    grid-area: card7;
+    }
+
+#name8 {
+    grid-area: card8;
+    }
