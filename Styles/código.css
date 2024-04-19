@@ -1,12 +1,11 @@
 body{
-    background-image: url(Media/ImagemdeFundo.jpg);
     color: #fff;
-    background-color: blue;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     margin: 0;
     padding: 0;
-  }s
+
+  }
   
 .container {
     display: flex;

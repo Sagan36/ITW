@@ -1,15 +1,19 @@
+
 /* Posicionamento naa pagina menu*/
 .menu{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto 40% auto;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: 
-    "Header"
-    "SinglePlayer"
-    "MultiPlayer"
-    "Tabelas"
-    "Informacoes"
+    "Header Header Header"
+    "Tutorial SinglePlayer Termos"
+    "Tutorial MultiPlayer Termos"
+    "Tutorial Tabelas  Termos"
+    "Tutorial Informacoes Termos"
+    "Footer Footer Footer"
     ;
+    text-align: center;
+    position: relative;
 }
 h1{
     font-size: 3rem;
@@ -34,6 +38,33 @@ header{
 #Informacoes{
     grid-area: Informacoes;
 }
+
+#Tutorial{
+    grid-area: Tutorial;
+}
+
+#Termos{
+    grid-area: Termos;
+    position: relative;
+}
+footer{
+    grid-area: Footer;
+}
+/* Termos e Condicoes */
+
+.inPage {
+    width: 40%;
+    margin: 0 auto; 
+    padding: 20px; 
+    border: 2px solid #000000; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: skyblue;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+}
+
+
 
 /* Butões*/
 .ndButton {
@@ -93,8 +124,45 @@ header{
 @media screen and (max-width:599px){
 
     h1{
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+
+    .ndButton {
+        margin: 10px auto;
+        color: rgb(255, 255, 255);
+        background-color: rgb(50, 70, 248);
+        font-size: 7px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    .ndButton:hover {
+        background-color: rgb(98, 176, 228);
+        color: white;
     }
 
 
-    }
+#button1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+#button2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#button3 {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#button4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+}
