@@ -1,8 +1,15 @@
 
+body{
+    text-align: center;
+    background-size: auto;
+    position: relative;
+
+}
+
 /* Posicionamento naa pagina menu*/
 .menu{
     display: grid;
-    grid-template-columns: auto 40% auto;
+    grid-template-columns: 40% 20% 40%;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: 
     "Header Header Header"
@@ -12,12 +19,17 @@
     "Tutorial Informacoes Termos"
     "Footer Footer Footer"
     ;
-    text-align: center;
-    position: relative;
+    overflow: auto;
+
+
 }
 h1{
-    font-size: 3rem;
+    font-size: 4rem;
 }
+h2{
+    font-size: 2rem;
+}
+
 header{
     grid-area: Header;
 }
@@ -29,6 +41,7 @@ header{
 
 #MultiPlayer{
     grid-area: MultiPlayer;
+
 }
 
 #Tabelas{
@@ -49,19 +62,16 @@ header{
 }
 footer{
     grid-area: Footer;
+
 }
 /* Termos e Condicoes */
 
-.inPage {
-    width: 40%;
-    margin: 0 auto; 
-    padding: 20px; 
-    border: 2px solid #000000; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    background-color: skyblue;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
+
+iframe{
+    height: 500px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.6);
+
 }
 
 
@@ -69,20 +79,24 @@ footer{
 /* Butões*/
 .ndButton {
     margin: 10px auto;
-    color: rgb(255, 255, 255);
-    background-color: rgb(50, 70, 248);
+    color: #ceab43;
     font-size: 15px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.5s ease;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
 }
 
 .ndButton:hover {
-    background-color: rgb(98, 176, 228);
-    color: white;
+    background-color: rgb(0, 0, 0, 0.1);
+    color: #ceab43;
 }
 
 
@@ -91,17 +105,31 @@ footer{
     padding-right: 20px;
 }
 
+#button1:hover{
+    background-image: url(/Media/Deoxys.gif);
+    background-position: left;
+}
+
 
 #button2 {
     padding-left: 27px;
     padding-right: 27px;
 }
 
-#button3 {
-    padding-left: 54px;
-    padding-right: 54px;
+#button2:hover{
+    background-image: url(/Media/Flareon.gif);
+    background-position: left;
 }
 
+#button3 {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#button3:hover{
+    background-image: url(/Media/Rayquaxa.gif);
+    background-position: center;
+}
 #button4 {
     padding-left: 27px;
     padding-right: 27px;

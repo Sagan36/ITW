@@ -1,0 +1,7 @@
+@import url("/Media/webfontkit-20240419-143343/stylesheet.css");
+html{
+    font-family: "pokemon_solidnormal", sans-serif ;
+    background-image: url(/Media/ImagemdeFundo.jpg);
+    height: auto;
+    width: auto;
+}
