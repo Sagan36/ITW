@@ -84,6 +84,7 @@ html{
 
 /*=============================*/
 /* Butões selectivos */
+
 .dropdown {
     position: relative;
   }
@@ -127,6 +128,20 @@ html{
 
 
 /* Botao de voltar */
+
+.top-left-button {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #00eaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
  
 /*=============================*/
 

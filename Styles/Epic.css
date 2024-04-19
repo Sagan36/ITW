@@ -36,15 +36,6 @@
     display: block;
 }
 
-.shinybutton {
-
-    color: crimson;
-    padding: 20px;
-    text-decoration: blink;
-    display: ruby;   
-
-
-}
 
 .center-content {
     position: absolute;
@@ -58,18 +49,6 @@
     margin-top: 20px; 
 }
 
-.top-left-button {
-    text-decoration: none;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #00ff0d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .color{
 
