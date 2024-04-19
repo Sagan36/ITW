@@ -240,179 +240,96 @@ Header{
     
 .board {
     display: grid;
-    grid-template-columns:repeat(4, 1fr);
+    padding-top: 10vh;
     gap: 20px;
-    height: 100vh;
-    grid-template-rows:auto auto auto auto auto;
-    box-sizing: border-box;
+    /* height: 100vh;
+    width: 90vw;
+    max-width:  700px; */
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 10    px;
+        
 }
 
 
-.card {
-    display: flex;
-    justify-content: center;
+.board img {
+
+    /* isto está bem mas depois vê */
+
+
+    /* justify-content: center;
     align-items: center;
     font-size: 18px;
     border-radius: 10px;
     border-color: aqua;
-    width: 100%;
+    
     height: 100%; 
     background-size: cover;
     background-position: center;
     padding: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombreado na carta */
-    background-image: url("Media/backcard.jpeg");
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); sombreado na carta */
+    /* background-image: url("Media/backcard.jpeg"); */
+    width: 50%;
   
 }
+.cartinha{
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15vh;
 
-#card1 {
-    grid-area: card1;
-    }
-#card2 {
-    grid-area: card2;
-    }
+}
 
-#card3 {
-    grid-area: card3;
-    }
+/*================================================================*/
+/* Grid para o nome dos jogad */
+.grid_players{
+    display: grid;
+   
+    grid-template-areas:
+     "player1 player2"
+     "player3 player4"
+     ;
+    margin: auto auto ;
+}
 
-#card4 {
-    grid-area: card4;
-    }   
+#player1{
+    grid-area: player1;
+}
 
-#card5 {
-    grid-area: card5;
-    }
+#player2{
+    grid-area: player2;
+}
 
-#card6 {
-    grid-area: card6;
-    }
+#player3{
+    grid-area: player3;
+}
 
-#card7 {
-    grid-area: card7;
-    }
+#player4{
+    grid-area: player4;
+}
 
-#card8 {
-    grid-area: card8;
-    }
-
-#card9 {
-    grid-area: card9;
-    }
-
-#card10 {
-    grid-area: card10;
-    }
-
-#card11 {
-    grid-area: card11;
-    }
-
-#card12 {
-    grid-area: card12;
-    }
-
-#card13 {
-    grid-area: card13;
-    }
-
-#card14 {
-    grid-area: card14;
-    }
-
-#card15 {
-    grid-area: card15;
-    }
-
-#card16 {
-    grid-area: card16;
-    }
-
-#card17 {
-    grid-area: card17;
-    }
-
-#card18 {
-    grid-area: card18;
-    }
-
-#card19 {
-    grid-area: card19;
-    }
-
-#card20 {
-    grid-area: card20;
-    }
 
 
 
 
 
 /*================================================================*/
-/* Grid para o nome dos jogad */
+/* barra preta */
 
-.board2 {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    gap: 20px;
-    height: 100vh;
-
-    grid-template-areas: 
-    "player1 name1"
-    "player2 name2"
-    "player3 name3"
-    "player4 name4"
-    ;
+#barra{
+    margin:0;
+    height:100px; 
+    width: 200%;
+    position:fixed;
+    z-index:1;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding-bottom: 60px;
     
 }
-
-.name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 10px;
-    border-color: aqua;
-    width: 100%;
-    height: 100%; 
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombreado na carta */
-    background-image: "Media/pokemonBackGround.png";
-}
-
-
-#name1 {
-    grid-area: card1;
-    }
-#name2 {
-    grid-area: card2;
-    }
-
-#name3 {
-    grid-area: card3;
-    }
-
-#name4 {
-    grid-area: card4;
-    }   
-
-#name5 {
-    grid-area: card5;
-    }
-
-#name6 {
-    grid-area: card6;
-    }
-
-#name7 {
-    grid-area: card7;
-    }
-
-#name8 {
-    grid-area: card8;
-    }
