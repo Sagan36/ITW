@@ -77,6 +77,8 @@ header{
 /*================================================================*/
 /*Grid feita para a pagina "sobre nós"*/
 
+@media screen and (max-width:599px) {
+    
 .grid-img-info{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -158,10 +160,10 @@ header{
     .info h2 {
         color: lightblue;
         padding: 10px;
+        }
     }
+
 }
-
-
 /*================================================================*/
 /*Grid para os butões da página"SinglePlayer"*/
 
@@ -247,7 +249,7 @@ Header{
     max-width:  700px; */
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto auto auto auto;
-    grid-gap: 10    px;
+    grid-gap: 10px;
         
 }
 
@@ -284,7 +286,41 @@ Header{
 }
 
 /*================================================================*/
-/* Grid para o nome dos jogad */
+/* Footer*/
+
+.footer-display {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    min-height: 100vh; 
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.vertical-footer { 
+    grid-column: 2; 
+    background-color: aqua;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    height: 100%;
+    width: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+/*================================================================*/
+/* Grid para o nome dos jogadores */
+
 .grid_players{
     display: grid;
    
