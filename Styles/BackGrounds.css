@@ -1,8 +1,8 @@
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+body{
+    background-color: blueviolet;
+
+    background-image: url(Media/ImagemdeFundo.jpg);
+
 }
 
 .video-background {
@@ -26,19 +26,3 @@ html {
     transform: translate(-50%, -50%);
 }
 
-h1{
-    font-size: 60px;
-}
-
-.grid-img{
-    grid-column: 1 / 2;
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.grid-info{
-    grid-column: 2 / 5;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
