@@ -115,6 +115,158 @@
         padding-bottom: 10px;
     
     }
+
+    
+/*================================================================*/
+/* Grid com o tabuleiro de jogo */
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: 90%;
+    max-width: 800px;
+    gap: 15px;
+    margin:70px auto;
+
+    }
+
+    .cartinha{
+    width: 100%;
+    height: 200px; 
+    background-color: black; 
+    position: relative;
+    }
+
+    .face{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .front{
+        
+        background-image: url(../Media/backcard.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .back{
+        background-image: url(../Media/backcard.jpeg);
+    }
+    
+    /*================================================================*/
+    /* Footer*/
+    
+    .footer-display {
+        display: grid;
+        grid-template-columns: 1fr auto; 
+        min-height: 100vh; 
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    .vertical-footer { 
+        grid-column: 2; 
+        background-color: aqua;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        height: 100%;
+        width: 200px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 10px 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    
+    
+    
+    
+    /*================================================================*/
+    /* Grid para o nome dos jogadores */
+    
+    .grid_players{
+        display: grid;
+       
+        grid-template-areas:
+         "player1 player2"
+         "player3 player4"
+         ;
+        margin: auto auto ;
+    }
+    
+    #player1{
+        grid-area: player1;
+    }
+    
+    #player2{
+        grid-area: player2;
+    }
+    
+    #player3{
+        grid-area: player3;
+    }
+    
+    #player4{
+        grid-area: player4;
+    }
+
+
+
+
+/*================================================================*/
+/* Grid para o nome dos jogadores */
+
+.grid_players{
+    display: grid;
+   
+    grid-template-areas:
+     "player1 player2"
+     "player3 player4"
+     ;
+    margin: auto auto ;
+}
+
+#player1{
+    grid-area: player1;
+}
+
+#player2{
+    grid-area: player2;
+}
+
+#player3{
+    grid-area: player3;
+}
+
+#player4{
+    grid-area: player4;
+}
+
+
+
+
+
+
+/*================================================================*/
+/* barra preta */
+
+#barra{
+    margin:0;
+    height:100px; 
+    width: 200%;
+    position:fixed;
+    z-index:1;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding-bottom: 60px;
     
     
     #TituloTempo{

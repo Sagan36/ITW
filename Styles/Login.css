@@ -38,7 +38,7 @@ h2{
 #Right{
     grid-area: Right;
     background-image: url(/Media/Grund.png);
-    align-items: right;
+
 
 }
 
@@ -137,7 +137,7 @@ footer{
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #09ff00;
+    background-color: aqua;
     color: #fff;
     border: none;
     border-radius: 5px;

@@ -1,0 +1,144 @@
+body{
+    text-align: center;
+    background-size: auto;
+
+}
+
+h2{
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
+}
+
+/* Grid */
+.players {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "Left title Right" 
+        "Left twoPlayers Right"
+        "Left threePlayers Right"
+        "Left fourPlayers Right";
+        overflow: auto;
+        text-align: center;
+        position: relative;
+        align-items: center;
+        top: 57px; 
+}
+
+
+#Left {
+    grid-area: Left;
+    background-image: url('/Media/Blastoise.jpg');
+}
+
+#Right {
+    grid-area: Right;
+    background-image: url('/Media/Charizard.png');
+}
+
+/* bookmarks */
+
+.vertical-bookmark { 
+    background-color: aqua;
+    color: white;
+    font-size: 20px;
+    height: 800px;
+    border-radius: 10px;
+    background-position: 70% 30%;
+}
+
+
+#twoPlayers{
+    grid-area: twoPlayers;
+}
+
+#threePlayers{
+    grid-area: threePlayers;
+}
+
+#fourPlayers{
+    grid-area: fourPlayers;
+}
+
+#title{
+    grid-area: title
+}
+
+header{
+    grid-area: Header;
+}
+
+
+
+.ndButton {
+    margin: 10px auto;
+    color: #ceab43;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
+}
+
+.ndButton:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+    color: #ceab43;
+}
+
+#button4{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#button4:hover{
+    background-image: url(/Media/2players.gif);
+    background-position: left;
+}
+
+#button5{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#button5:hover{
+    background-image: url(/Media/3players.gif);
+    background-position: left;
+}
+
+#button6{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#button6:hover{
+    background-image: url(/Media/4players.gif);
+    background-position: center;
+}
+
+.top-left-button {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: aqua;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
