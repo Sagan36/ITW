@@ -1,0 +1,60 @@
+html, body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('/Media/fundoAboutUs.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    overflow-x: hidden; 
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.grid-AboutUs {
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-template-areas: 
+    "Img" "info-Gonçalo"
+    "Img" "info-Dinis"
+    "Img" "info-Ricardo";
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#Img {
+    max-width: 100%;
+    height: auto;
+    grid-area: Img; 
+}
+
+#Info-Gonçalo {
+    grid-area: info-Gonçalo; 
+}
+
+#Info-Gonçalo {
+    grid-area: info-Dinis; 
+}
+
+#Info-Ricardo {
+    grid-area: info-Ricardo; 
+}
+
+
+@media screen and (max-width: 599px) {
+    .grid-AboutUs {
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+        'image' 'info'; 
+    }
+
+    #Img {
+        justify-self: center; 
+    }
+}
