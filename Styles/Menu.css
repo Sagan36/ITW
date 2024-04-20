@@ -164,10 +164,6 @@ iframe{
     background-image: url(/Media/Rayquaxa.gif);
     background-position: center;
 }
-#button4 {
-    padding-left: 27px;
-    padding-right: 27px;
-}
 
 .top-left-button {
     text-decoration: none;
@@ -175,56 +171,11 @@ iframe{
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #00ff0d;
+    background-color: aqua;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* diferentes tamanhos de paginas web */
-@media screen and (max-width:599px){
 
-    h1{
-        font-size: 1rem;
-    }
-
-    .ndButton {
-        margin: 10px auto;
-        color: rgb(255, 255, 255);
-        background-color: rgb(50, 70, 248);
-        font-size: 7px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.5s ease;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    
-    .ndButton:hover {
-        background-color: rgb(98, 176, 228);
-        color: white;
-    }
-
-
-#button1 {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-
-#button2 {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#button3 {
-    padding-left: 35px;
-    padding-right: 35px;
-}
-
-#button4 {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-}
