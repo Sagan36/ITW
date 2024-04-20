@@ -93,28 +93,6 @@
     /*================================================================*/
     /*Grid para os butões da página"SinglePlayer"*/
     
-    
-    
-    .singleplayer{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 30% auto auto auto;
-        grid-template-areas: 
-        "Header Header"
-        "TituloTabuleiro Tabuleiro"
-        "TituloTempo Tempo"
-        "StartButton StartButton" 
-        ;
-        align-items: center;
-        padding: 50px;
-    }
-    
-        
-    Header{
-        grid-area: Header;
-        padding-bottom: 10px;
-    
-    }
 
     
 /*================================================================*/
