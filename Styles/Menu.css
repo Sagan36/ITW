@@ -10,18 +10,15 @@ body{
 .menu{
     display: grid;
     grid-template-columns: 40% 20% 40%;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas: 
     "Header Header Header"
     "Tutorial SinglePlayer Termos"
     "Tutorial MultiPlayer Termos"
     "Tutorial Tabelas  Termos"
-    "Tutorial Informacoes Termos"
     "Footer Footer Footer"
     ;
     overflow: auto;
-
-
 }
 h1{
     font-size: 4rem;
@@ -32,6 +29,13 @@ h2{
 
 header{
     grid-area: Header;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
 }
 
 #SinglePlayer{
@@ -48,13 +52,10 @@ header{
     grid-area: Tabelas;
 }
 
-#Informacoes{
-    grid-area: Informacoes;
-}
 
 #Tutorial{
     grid-area: Tutorial;
-}
+    }
 
 #Termos{
     grid-area: Termos;
@@ -65,18 +66,51 @@ footer{
 
 }
 /* Termos e Condicoes */
-
-
 iframe{
     height: 500px;
     width: 350px;
     background-color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    border-width: 7px;
+    border-style: solid;
+    border-image: url("/Media/Frame.png") 75 repeat; 
+    overflow: hidden;
+
+}
+/* Como jogar */
+.tutorial{
+    width: 350px;
+    height: 270px;
+
+}
+
+.tutorial-frame{
+    width: auto;
+    border-width: 15px;
+    border-style: solid;
+    border-image: url("/Media/Frame.png") 75 repeat; 
+    overflow: hidden;
+}
+/* Footer */
+.footer-display {
+    font-size: 1rem;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
+}
+.footer-display a {
+    color: rgb(33, 32, 141);
+    text-shadow: none
 
 }
 
 
 
-/* Butões*/
+/* links*/
 .ndButton {
     margin: 10px auto;
     color: #ceab43;

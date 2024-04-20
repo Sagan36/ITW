@@ -7,10 +7,13 @@
     <link rel="stylesheet" type="text/css" href="Styles/Buttons.css">
     <link rel="stylesheet" type="text/css" href="Styles/BackGrounds.css">
     <link rel="stylesheet" type="text/css" href="Styles/position.css">
+
+    <link rel="stylesheet" type="text/css" href="Styles/Login.css">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <title>Jogo da Memória</title>
 </head>
 <body>
+
 
     <a href="Index.html" class="top-left-button">Voltar</a>
     <h1>Your Player Info</h1>
@@ -37,4 +40,50 @@
       </form>
     </div>
   </body>
+
+    <a href="Menu.html" class="top-left-button">Voltar</a>
+    <div class="login">
+      <div id="Imagem">
+        <img src="/Media/Login.gif" alt="Example GIF">
+      </div> 
+      <div class="login-container" id="Caixa">
+        <h2>Login</h2>
+        <form action="SinglePlayer.html" method="get">
+          <input type="text" name="E-mail" placeholder="E-mail" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <select name="faixa etaria" required>
+            <option value="" disabled selected> Age group</option>
+            <option value="criança">criança(0-12)</option>
+            <option value="adolescente">adolescente(13-17) </option>
+            <option value="adulto">adulto(18-64)</option>
+            <option value="idoso">idoso(65+anos)</option>
+          </select>
+          <select name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+            <option value="other">Outro</option>
+          </select>
+          <a href="SinglePlayer.html" class="buttonLog"><button type="submit">Login</button></a>
+        </form>
+      </div>
+      <div class="vertical-bookmark" id="Right">
+        
+      </div>
+      <div class="vertical-bookmark" id="Left">
+        
+      </div>
+      <footer class="footer-display">
+        Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo
+        Seguro nº62259</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+        <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+    </footer>
+  
+  
+  
+  
+  
+  </div>
+</body>
+
 </html>
