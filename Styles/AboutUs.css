@@ -20,32 +20,47 @@ h1 {
     display: grid;
     grid-template-columns: auto auto; 
     grid-template-areas: 
-    "Img" "info-Gonçalo"
-    "Img" "info-Dinis"
-    "Img" "info-Ricardo";
+    "Img" "Info"
+    "Img" "Info"
+    "Img" "Info";
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 #Img {
-    max-width: 100%;
-    height: auto;
-    grid-area: Img; 
+    background-image: url("/Media/nos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    width: 90%;
+    height: 100vh;
+
+
 }
 
-#Info-Gonçalo {
-    grid-area: info-Gonçalo; 
+#Info {
+    grid-area: Info; 
+    color:lightseagreen
 }
 
-#Info-Gonçalo {
-    grid-area: info-Dinis; 
-}
 
-#Info-Ricardo {
-    grid-area: info-Ricardo; 
+.top-left-button {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #00eaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
 }
-
 
 @media screen and (max-width: 599px) {
     .grid-AboutUs {

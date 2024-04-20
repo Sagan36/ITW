@@ -1,95 +1,4 @@
-/*Grid para os botoes na pagina do Menu*/
 
-/*================================================================*/
-/*Grid feita para a pagina "sobre nós"*/
-
-@media screen and (max-width:599px) {
-    
-    .grid-img-info{
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto ;
-        grid-template-areas: 
-        "Img Info-Gonçalo"
-        "Img Info-Dinis"
-        "Img Info-Ricardo";
-    
-        grid-gap: 20px;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-               
-    
-    
-    #Img{
-        grid-area: Img;
-        max-width: 75%;
-        height: auto;
-        display: block;
-    }
-    
-    #Info-Gonçalo{
-        grid-area: Info-Gonçalo;
-    }
-    
-    #Info-Dinis{
-        grid-area: Info-Dinis;
-    }
-    
-    #Info-Ricardo{
-        grid-area: Info-Ricardo;
-    }
-    
-    .info h2 {
-        color: lightblue;
-        padding: 10px;
-    }
-    
-    @media screen and(min-width:600px){
-        .grid-img-info{
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-rows: auto auto ;
-            grid-template-areas: 
-            "Img Info-Gonçalo"
-            "Img Info-Dinis"
-            "Img Info-Ricardo";
-        
-            grid-gap: 20px;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        
-        #Img{
-            grid-area: Img;
-            max-width: 20%;
-            height: auto;
-            display: block;
-        }
-        
-        #Info-Gonçalo{
-            grid-area: Info-Gonçalo;
-        }
-        
-        #Info-Dinis{
-            grid-area: Info-Dinis;
-        }
-        
-        #Info-Ricardo{
-            grid-area: Info-Ricardo;
-        }
-        
-        .info h2 {
-            color: lightblue;
-            padding: 10px;
-            }
-        }
-    
-    }
     /*================================================================*/
     /*Grid para os butões da página"SinglePlayer"*/
     
@@ -245,6 +154,7 @@
     background-color: black;
     overflow-x: hidden;
     padding-bottom: 60px;
+}
     
     
     #TituloTempo{

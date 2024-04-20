@@ -165,17 +165,5 @@ iframe{
     background-position: center;
 }
 
-.top-left-button {
-    text-decoration: none;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: aqua;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 
