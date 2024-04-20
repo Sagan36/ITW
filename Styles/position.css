@@ -239,51 +239,85 @@ Header{
 /*================================================================*/
 /* Grid com o tabuleiro de jogo */
 
+    .board{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        width: 90%;
+        max-width: 800px;
+        gap: 15px;
+        margin:70px auto;
     
-.board {
-    display: grid;
-    padding-top: 10vh;
-    gap: 20px;
-    /* height: 100vh;
-    width: 90vw;
-    max-width:  700px; */
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
-    grid-gap: 10px;
+        }
+
+        .cartinha{
+        width: 100%;
+        height: 200px; 
+        background-color: black; 
+        position: relative;
+        }
+
+        .face{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .front{
+            
+            background-image: url(../Media/backcard.jpeg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .back{
+            background-image: url(../Media/backcard.jpeg);
+        }
+/*         
+        .card:hover{
+            transform: rotateY(180deg);
+        } */
+
         
-}
 
 
-.board img {
-
-    /* isto está bem mas depois vê */
 
 
-    /* justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 10px;
-    border-color: aqua;
-    
-    height: 100%; 
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); sombreado na carta */
-    /* background-image: url("Media/backcard.jpeg"); */
-    width: 50%;
-  
-}
-.cartinha{
-    align-content: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 15vh;
 
-}
+
+
+        /* .board {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+          .cardtinha {
+            aspect-ratio: 3/4;
+            width: 100%;
+            border-radius: 5px;
+            position: relative;
+            transition: all 400ms ease;
+            transform-style: preserve-3d;
+            background-color: #ccc;
+          }
+          .face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            border: 5px solid #00b5cc;
+            border-radius: 5px;
+            transition: all 400ms ease;
+          }
+          .imagem_carta_fora {
+            transform: rotateY(180deg);
+          }
+          . .imagem_carta_dentro{
+            background-image: url('../images/back.png');
+            backface-visibility: hidden;
+          } */
 
 /*================================================================*/
 /* Footer*/
@@ -352,20 +386,3 @@ Header{
 
 
 
-/*================================================================*/
-/* barra preta */
-
-#barra{
-    margin:0;
-    height:100px; 
-    width: 200%;
-    position:fixed;
-    z-index:1;
-    top: 0;
-    left: 0;
-    padding-left: 0;
-    background-color: black;
-    overflow-x: hidden;
-    padding-bottom: 60px;
-    
-}
