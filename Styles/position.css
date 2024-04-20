@@ -155,7 +155,7 @@
     overflow-x: hidden;
     padding-bottom: 60px;
 }
-    
+
     
     #TituloTempo{
         grid-area: TituloTempo;
@@ -204,19 +204,22 @@
     
     /*================================================================*/
     /* Grid com o tabuleiro de jogo */
-    
+
+  
         .board{
             display: grid;
             grid-template-columns: repeat(5,1fr);
-            width: 90%;
+            width: 80%;
             max-width: 800px;
-            gap: 15px;
+            gap: 5px;
             margin:70px auto;
+            overflow-y: hidden; 
+            position:fixed;
         
             }
     
             .cartinha{
-            width: 100%;
+            width: 100px;
             height: 200px; 
             background-color: black; 
             position: relative;
@@ -237,54 +240,7 @@
             .back{
                 background-image: url(../Media/backcard.jpeg);
             }
-    /*         
-            .card:hover{
-                transform: rotateY(180deg);
-            } */
-    
-            
-    
-    
-    
-    
-    
-    
-    
-            /* .board {
-                display: grid;
-                grid-template-columns: repeat(7, 1fr);
-                gap: 15px;
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-              }
-              .cardtinha {
-                aspect-ratio: 3/4;
-                width: 100%;
-                border-radius: 5px;
-                position: relative;
-                transition: all 400ms ease;
-                transform-style: preserve-3d;
-                background-color: #ccc;
-              }
-              .face {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                background-size: cover;
-                background-position: center;
-                border: 5px solid #00b5cc;
-                border-radius: 5px;
-                transition: all 400ms ease;
-              }
-              .imagem_carta_fora {
-                transform: rotateY(180deg);
-              }
-              . .imagem_carta_dentro{
-                background-image: url('../images/back.png');
-                backface-visibility: hidden;
-              } */
-    
+  
     /*================================================================*/
     /* Footer*/
     
@@ -347,3 +303,134 @@
         grid-area: player4;
     }
     
+
+
+    
+    /*================================================================*/
+    /* leaderboard */
+    .wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .lboard_section{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 500px;
+        height: 400px;
+        margin: 10px auto 0;
+        background: #f94f62;
+        padding: 25px 40px;
+        position: relative;
+        border-radius: 5px;
+    }
+    
+    .lboard_section .lboard_tabs ul{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+    }
+    
+    .lboard_section .lboard_tabs ul li{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #3a3d51;
+        cursor: pointer;
+    }
+    
+    .lboard_section .lboard_tabs ul li:hover,
+    .lboard_section .lboard_tabs ul li.active{
+        color: #fff;
+    }
+    
+    .lboard_wrap{
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 70px;
+        left: 40px;
+        background: #ffd300;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    
+    .lboard_wrap .lboard_item{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 25px;
+    }
+    
+    .lboard_wrap .lboard_mem{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #ffe773;
+    }
+    
+    .lboard_wrap .lboard_mem:first-child{
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 0;
+    }
+    
+    .lboard_wrap .lboard_mem:last-child{
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    
+    .lboard_wrap .lboard_mem .img{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 50px;
+    }
+    
+    .lboard_wrap .lboard_mem img{
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        width: 100%;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar{
+        font-family: Arial, Helvetica, sans-serif;        
+        margin: 0 20px;
+        width: calc(100% - 150px);
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar p{
+        font-family: Arial, Helvetica, sans-serif;
+        color: #3a3d51;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar p span{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 5px;
+    }
+    
+    .lboard_wrap .lboard_mem .points{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100px;
+        color: #3a3d51;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar .bar_wrap{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 5px;
+        background: #d5b000;
+        margin-top: 5px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+     
+    .lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background: #fff;
+        border-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
