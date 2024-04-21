@@ -435,3 +435,14 @@
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
     }
+
+
+    .grid_leaderboard{
+        display: grid;
+       
+        grid-template-areas:
+         "leader1 leader2"; 
+
+        grid-template-columns: 1300px 10%;
+      
+    }
