@@ -1,3 +1,4 @@
+/* ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 */
 .jogo{
     display: grid;
     grid-template-columns: 11% 78% 11%;
@@ -185,12 +186,28 @@ header{
     width: 100%;
     height: 165px; 
     position: relative;
+
     }
 
     .face{
         width: 100%;
         height: 100%;
         position: relative;
+
+        color: #ffffff;
+        text-align: 20px;
+        text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+    }
+
+    .number{
+        position: absolute;
+        left: 15px; 
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .front{
@@ -198,11 +215,11 @@ header{
         background-image: url(../Media/backcard.jpeg);
         background-size: cover;
         background-position: center;
+        
     }
 
-    .back{
-        background-image: url(../Media/backcard.jpeg);
-    }
+  
+
 /* Laptops pequenos  */
 @media screen and (min-width: 992px){
     .jogo{
@@ -232,7 +249,7 @@ header{
     }
     .vertical-box{ 
     font-size: 10px;
-    height: 360px;
+    height: 390px;
     width: 90%;
     border: 5px solid transparent;
     border-image: url("/Media/Frame.png") 75 round;
@@ -244,8 +261,8 @@ header{
         font-size: 1rem;
     }
     .multiple-choice-buttons input[type="radio"] {
-        width: 9px; 
-        height: 9px; 
+        width: 12px; 
+        height: 12px; 
         border-radius: 20px;
         display: inline-block;
     }
@@ -261,25 +278,15 @@ header{
     }
     .multiple-choice-buttons label {
         width: 90px; 
-    }     
+    }
+    .number{
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+    }    
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*telemoveis*/
 
 @media screen and (max-width: 599px){
     .jogo{
@@ -326,11 +333,11 @@ header{
     }
 
     #Opcoes.vertical-box{
-        height: 200px;
+        height: 250px;
     }
    
 
-    }
+    
     h1{
         font-size: 2rem;
     }
@@ -338,8 +345,8 @@ header{
         font-size: 1rem;
     }
     .multiple-choice-buttons input[type="radio"] {
-        width: 9px; 
-        height: 9px; 
+        width: 15px; 
+        height: 15px; 
         border-radius: 20px;
         display: inline-block;
     }
@@ -361,15 +368,21 @@ header{
     font-size: 1rem;
     padding: 4px;
 }
-
-
-
-
-
-
-
-
-
+    .number{
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }    
 }
+
+
+
+
+
+
+
+
+
+
 
 

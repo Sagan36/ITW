@@ -1,5 +1,4 @@
- /*Como ainda não será avaliada a componente JavaScript neste trabalho as mudanças de leaderboard consoante a funcionalidade
- de escolha dos parâmetros a estabelecer por parte utilizador ainda não está funcional, o mesmo se aplica às grids de jogo */
+/* ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 */
 
 @import url("/Media/webfontkit-20240419-143343/stylesheet.css");
 html{
@@ -29,7 +28,6 @@ a{
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
-    z-index: 9999; /* para aparecer à frente de outros conteúdos quando o ecrã é menor que 599px */
 }
  
 /*=============================*/

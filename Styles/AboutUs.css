@@ -1,15 +1,21 @@
 html, body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: inherit;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     background-image: url('/Media/fundoAboutUs.jpg');
-    background-size: cover;
     background-position: center;
+    background-size: 100%;
     color: white;
     overflow: auto; 
 }
+
 
 .fundo {
     background-image: url("/Media/fundoAboutUs.jpg");
