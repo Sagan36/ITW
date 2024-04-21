@@ -49,6 +49,11 @@ h2{
 }
 
 /* bookmarks */
+.bookmarks{
+    display: flex; /* Usando flexbox para alinhar itens */
+    align-items: center; /* Centralizar verticalmente os itens */
+}
+
 .left-bookmark {
     background-image: url("/Media/Blastoise.jpg");
     background-size: cover;
@@ -63,9 +68,8 @@ h2{
     border-image: url("/Media/Frame.png") 75 round;
     border-style: solid;
     border-width: 10px;
-  
 }
-
+  
 .right-bookmark {
     background-image: url("/Media/Charizard.jpg");
     background-size: cover;
