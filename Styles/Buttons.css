@@ -167,3 +167,30 @@
 .login-container button:hover {
     background-color: #45a049;
 }
+
+/*=============================*/
+/* botão de acabar o jogo */
+
+.over-button {
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.red-button:hover {
+    background-color: #c0392b;
+}
+
