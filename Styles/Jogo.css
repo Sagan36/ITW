@@ -1,11 +1,11 @@
 .jogo{
     display: grid;
     grid-template-columns: 11% 78% 11%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 20% 55% 25%;
     grid-template-areas: 
     "Header Header Header"
     "Opcoes Jogo Pontos"
-    "Encerrar Encerrar Encerrar"
+    "Start Start Start"
     ;
     overflow: auto;
     align-items: center;
@@ -43,8 +43,8 @@ header{
     grid-area: Pontos;
 
 }
-#Encerrar{
-    grid-area: Encerrar;
+#Start{
+    grid-area: Start;
 }
 
 #Jogo{
@@ -70,7 +70,7 @@ header{
 }
 
 .multiple-choice-buttons input[type="radio"] {
-    appearance: none; /* Remove default appearance */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 25px; 
@@ -114,7 +114,56 @@ header{
     background-position: center;
     background-size: 150%;
 }
+/* Terminar o Jogo Manualmente */
+.Terminar{
+    margin: 10px auto;
+    color: #d41f1f;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+    font-family: inherit;
 
+}
+
+.Terminar:hover{
+    background-image: url(/Media/Terminar.gif);
+    background-position: center;
+    background-size: 150%;
+}
+.Terminar h2{
+    color: rgb(214, 48, 48);
+}
+
+/* Comecar o Jogo*/
+.Comecar{
+    margin: 10px auto;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+    font-family: inherit;
+
+}
+
+.Comecar:hover{
+    background-image: url(/Media/Start.gif);
+    background-position: center;
+    background-size: 150%;
+}
 
 
 /*Grid do Jogo */
@@ -154,4 +203,173 @@ header{
     .back{
         background-image: url(../Media/backcard.jpeg);
     }
+/* Laptops pequenos  */
+@media screen and (min-width: 992px){
+    .jogo{
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: auto auto auto;
+        overflow: auto;
+        margin-left: 50px;
+        margin-right: 50px;
+        grid-row-gap: 0px;
+    }
+    header{
+        padding-bottom: 0px;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    .board{
+        width: 40%;
+        max-width: 50%;
+        margin:0px auto;
+        padding: 5px;
+        }
+
+    .cartinha{
+        width: 100%;
+        height: 80px; 
+    }
+    .vertical-box{ 
+    font-size: 10px;
+    height: 360px;
+    width: 90%;
+    border: 5px solid transparent;
+    border-image: url("/Media/Frame.png") 75 round;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .multiple-choice-buttons input[type="radio"] {
+        width: 9px; 
+        height: 9px; 
+        border-radius: 20px;
+        display: inline-block;
+    }
+    .Aplicar h2{
+        font-size: 14px;
+
+    }
+    .Terminar h2{
+        font-size: 14px
+    }
+    .Comecar h1{
+        font-size: 20px;
+    }
+    .multiple-choice-buttons label {
+        width: 90px; 
+    }     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px){
+    .jogo{
+        grid-template-columns: 80% 20%;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+        
+        "Header Header"
+        "Jogo Pontos"
+        "Start Pontos"
+        "Opcoes Opcoes"
+        
+        ;
+        overflow: auto;
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-row-gap: 0px;
+    }
+    header{
+        padding-bottom: 0px;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    .board{
+        width: 100%;
+        max-width: 50%;
+        margin:0px auto;
+        padding: 0px;
+        gap: 2px;
+        }
+
+    .cartinha{
+        width: 100%;
+        height: 50px; 
+    }
+    .vertical-box{ 
+    font-size: 10px;
+    height: 400px;
+    width: 100%;
+    border: 5px solid transparent;
+    border-image: url("/Media/Frame.png") 75 round;
+    text-align: center;
+    }
+
+    #Opcoes.vertical-box{
+        height: 200px;
+    }
+   
+
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .multiple-choice-buttons input[type="radio"] {
+        width: 9px; 
+        height: 9px; 
+        border-radius: 20px;
+        display: inline-block;
+    }
+    .Aplicar h2{
+        font-size: 14px;
+
+    }
+    .Terminar h2{
+        font-size: 14px
+    }
+    .Comecar h1{
+        font-size: 20px;
+    }
+    .multiple-choice-buttons label {
+        width: 90px; 
+    }     
+
+#Voltar{
+    font-size: 1rem;
+    padding: 4px;
+}
+
+
+
+
+
+
+
+
+
+}
+
 

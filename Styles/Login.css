@@ -13,14 +13,23 @@ h2{
          1px  1px 0 #000000;
 
 }
-
+h1{
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+    font-size: 3rem;
+}
 
 /*Grid */
 .login{
     display: grid;
     grid-template-columns: 40% 20% 40;
-    grid-template-rows:  auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
+    "Header Header Header"
     "Left Imagem Right" 
     "Left Caixa Right"
     "Left Caixa Right"
@@ -65,6 +74,9 @@ footer{
     grid-area: Footer;
 }
 
+header{
+    grid-area: Header;
+}
 /* Bookmarks */
 .vertical-bookmark { 
     background-color: aqua;
@@ -127,4 +139,34 @@ footer{
     text-shadow: none
 
 }
- 
+@media screen and (max-width: 599px) {
+    .login {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "Header Header Header" 
+            "Left Imagem Right" 
+            "Left Caixa Right"
+            "Footer Footer Footer";
+        grid-gap: 0px;
+    }
+
+    /* Reset margin and padding for all grid items */
+    .login > * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust specific elements within the grid */
+    #Right, #Left {
+        grid-area: unset;
+        background-color: transparent;
+        background-image: none;
+        border: transparent;
+    }
+
+    #Imagem img {
+        height: 80px;
+        width: 80px;
+    }
+}

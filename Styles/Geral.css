@@ -4,6 +4,8 @@ html{
     background-image: url(/Media/ImagemdeFundo.jpg);
     height: auto;
     width: auto;
+    background-position: center;
+    background-size: 150%;
 }
 a{
     text-decoration: none;
@@ -12,13 +14,13 @@ a{
 /* Botao de voltar */
 
 .top-left-button {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
     text-decoration: none;
     position: fixed;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #00eaff;
+    background-color: #cecb15;
     color: #fff;
     border: none;
     border-radius: 5px;

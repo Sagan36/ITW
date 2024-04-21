@@ -8,7 +8,7 @@
     <title>Jogo da Memória</title>
 </head>
 <body>
-    <a href="Menu.html" class="top-left-button">Voltar</a>
+    <a href="Menu.html" class="top-left-button" id="Voltar">Voltar</a>
     <div class="jogo">
         <header><h1>Lets Battle!</h1></header>
     <div class="board" id="Jogo">
@@ -116,26 +116,40 @@
     <div class="vertical-box" id="Opcoes">
         <h2>Dificuldade</h2>
         <form class="multiple-choice-buttons">
-            <input type="radio" id="Facil" name="choice" value="Facil">
-            <label for="option1">Facil</label><br>
-            <input type="radio" id="Normal" name="choice" value="Normal">
-            <label for="option2">Normal</label><br>
-            <input type="radio" id="Hard" name="choice" value="Hard">
-            <label for="option3">Dificil</label><br>
+            <label>
+                <input type="radio" name="difficulty" value="Facil">
+                Facil
+            </label>
+            <label>
+                <input type="radio" name="difficulty" value="Normal">
+                Normal
+            </label>
+            <label>
+                <input type="radio" name="difficulty" value="Hard">
+                Dificil
+            </label>
         </form>
         <h2>Tempo</h2>
         <form class="multiple-choice-buttons">
-            <input type="radio" id="Facil" name="choice" value="Facil">
-            <label for="option1">Cronometro</label><br>
-            <input type="radio" id="Normal" name="choice" value="Normal">
-            <label for="option2">1:00</label><br>
-            <input type="radio" id="Hard" name="choice" value="Hard">
-            <label for="option3">2:00</label><br>
-            <input type="radio" id="Hard" name="choice" value="Hard">
-            <label for="option3">3:00</label><br>
+            <label>
+                <input type="radio" name="time" value="Cronometro">
+                Cronometro
+            </label>
+            <label>
+                <input type="radio" name="time" value="1:00">
+                1:00
+            </label>
+            <label>
+                <input type="radio" name="time" value="2:00">
+                2:00
+            </label>
+            <label>
+                <input type="radio" name="time" value="3:00">
+                3:00
+            </label>
         </form>
-        <p></p>
-        <button class="Aplicar"><h2>Aplicar</h2></button>
+            <button class="Aplicar"><h2>Aplicar</h2></button>
+            <button class="Terminar"><h2>Terminar</h2></button>
     </div>
     <div class="vertical-box" id="Pontos">
         <h2>Tempo</h2>
@@ -154,8 +168,9 @@
 
 
     </div>
-    <div id="Encerrar">
-        Ola
+    <div id="Start">
+        <button class="Comecar"><h1>Comecar</h1></button>
+        
     </div>
     </div>
 </body>
