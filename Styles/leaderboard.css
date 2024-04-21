@@ -1,0 +1,178 @@
+/*================================================================*/
+    /* leaderboard */
+    /* leaderboard */
+
+    .wrapper{
+        width: 100%;
+        height: 100%;
+        gap: 100px;
+    }
+    
+    .lboard_section{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 500px;
+        height: 400px;
+        margin: 10px auto 0;
+        background: #f94f62;
+        padding: 25px 40px;
+        position: relative;
+        border-radius: 5px;
+    }
+    
+    .lboard_section .lboard_tabs ul{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+    }
+    
+    .lboard_section .lboard_tabs ul li{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #3a3d51;
+        cursor: pointer;
+    }
+    
+    .lboard_section .lboard_tabs ul li:hover,
+    .lboard_section .lboard_tabs ul li.active{
+        color: #fff;
+    }
+    
+    .lboard_wrap{
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 70px;
+        left: 40px;
+        background: #ffd300;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    
+    .lboard_wrap .lboard_item{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 25px;
+    }
+    
+    .lboard_wrap .lboard_mem{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #ffe773;
+    }
+    
+    .lboard_wrap .lboard_mem:first-child{
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 0;
+    }
+    
+    .lboard_wrap .lboard_mem:last-child{
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    
+    .lboard_wrap .lboard_mem .img{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 50px;
+    }
+    
+    .lboard_wrap .lboard_mem img{
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        width: 100%;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar{
+        font-family: Arial, Helvetica, sans-serif;        
+        margin: 0 20px;
+        width: calc(100% - 150px);
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar p{
+        font-family: Arial, Helvetica, sans-serif;
+        color: #3a3d51;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar p span{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 5px;
+    }
+    
+    .lboard_wrap .lboard_mem .points{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100px;
+        color: #3a3d51;
+    }
+    
+    .lboard_wrap .lboard_mem .name_bar .bar_wrap{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 5px;
+        background: #d5b000;
+        margin-top: 5px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+     
+    .lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background: #fff;
+        border-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+
+    .grid_leaderboard{
+        display: grid;
+        grid-template-areas:
+         "leader1 leader2"; 
+
+        grid-template-columns: 1300px 10%;
+      
+    }
+    @media screen and (max-width:768px){
+        .grid_leaderboard{
+            
+            grid-template-columns: 90%;
+            grid-template-rows: auto auto;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            gap: 50px; ;
+            grid-template-areas: 
+            "Wrapper"
+            "Wrapper"
+            ;
+            height: 91vh;
+    } 
+    }   
+
+    /* @media only screen and (min-width: 600px) {
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto auto;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            }
+    
+        header { grid-area: 1 / 1 / 2 / 3; }
+        #parte1 { grid-area: 2 / 1 / 3 / 2; }
+        #parte2 { grid-area: 2 / 2 / 3 / 3; }
+        footer { grid-area: 3 / 1 / 4 / 3; }
+    
+        .imagem{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+    } */

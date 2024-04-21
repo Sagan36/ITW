@@ -7,7 +7,7 @@ html, body {
     background-image: url('/Media/fundoAboutUs.jpg');
     background-size: cover;
     background-position: center;
-    color: white; 
+    color: black;
     overflow-x: hidden; 
 }
 
@@ -35,7 +35,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
     left: 0;
-    width: 90%;
+    width: 100%;
     height: 100vh;
 
 

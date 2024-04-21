@@ -49,6 +49,11 @@ h2{
 }
 
 /* bookmarks */
+.bookmarks{
+    display: flex; /* Usando flexbox para alinhar itens */
+    align-items: center; /* Centralizar verticalmente os itens */
+}
+
 .left-bookmark {
     background-image: url("/Media/Blastoise.jpg");
     background-size: cover;
@@ -57,26 +62,29 @@ h2{
     position: fixed;
     top: 10%;
     left: 0;
-    width: 31%;
+    width: 25%;
     height: 100vh;
     background-color: aqua;
-    border: 5px solid #333;
-    border-radius: 0 10px 10px 0;
+    border-image: url("/Media/Frame.png") 75 round;
+    border-style: solid;
+    border-width: 10px;
 }
-
+  
 .right-bookmark {
-    background-image: url("/Media/Charizard.png");
+    background-image: url("/Media/Charizard.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: fixed;
     top: 10%;
     right: 0;
-    width: 31%;
+    width: 25%;
     height: 100vh;
     background-color: red;
-    border: 5px solid #333;
-    border-radius: 10px 0 0 10px;
+     border-image: url("/Media/Frame.png") 75 round;
+    border-style: solid;
+    border-width: 10px;
+   
     
 }
 
