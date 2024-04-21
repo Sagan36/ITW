@@ -138,34 +138,32 @@ header{
     text-shadow: none
 
 }
+
 @media screen and (max-width: 599px) {
+    
     .login {
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
         grid-template-areas:
-            "Header Header Header" 
-            "Left Imagem Right" 
-            "Left Caixa Right"
-            "Footer Footer Footer";
-        grid-gap: 0px;
+            "Header"
+            "Imagem"
+            "Caixa"
+            "Left"
+            "Right"
+            "Footer";
+        grid-gap: 10px;
     }
 
-    /* Reset margin and padding for all grid items */
+
     .login > * {
         margin: 0;
         padding: 0;
     }
 
-    /* Adjust specific elements within the grid */
-    #Right, #Left {
-        grid-area: unset;
-        background-color: transparent;
-        background-image: none;
-        border: transparent;
-    }
-
-    #Imagem img {
-        height: 80px;
-        width: 80px;
+  
+    #Caixa {
+        margin-top: 0;
     }
 }
+
+

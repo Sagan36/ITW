@@ -1,0 +1,26 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#video-customize {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.video-Introducao {
+    background-image: url("/Media/Video Introducao.mp4");
+    background-size: cover;
+    overflow: hidden; 
+    width: 100vw; 
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+

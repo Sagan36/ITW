@@ -67,7 +67,7 @@ h2{
     background-color: aqua;
     border-image: url("/Media/Frame.png") 75 round;
     border-style: solid;
-    border-width: 10px;
+    border-width: 8px;
 }
   
 .right-bookmark {
@@ -83,7 +83,7 @@ h2{
     background-color: red;
      border-image: url("/Media/Frame.png") 75 round;
     border-style: solid;
-    border-width: 10px;
+    border-width: 8px;
    
     
 }
@@ -146,5 +146,90 @@ h2{
     background-image: url(/Media/4players.gif);
     background-position: center;
 }
+@media screen and (max-width: 599px) {
+    
+    body {
+        overflow-y: auto; 
+    }
+
+   
+    .players {
+        grid-template-columns: 1fr; 
+        grid-template-areas:
+            "title"
+            "title"
+            "Blastoise"
+            "twoPlayers"
+            "threePlayers"
+            "fourPlayers"
+            "Charizard";
+    }
+
+    .left-bookmark {
+        background-image: url("/Media/Blastoise.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: fixed;
+        top: 10%;
+        left: 0;
+        width: 15%;
+        height: 100vh;
+        background-color: aqua;
+        border-image: url("/Media/Frame.png") 75 round;
+        border-style: solid;
+        border-width: 10px;
+    }
+      
+    .right-bookmark {
+        background-image: url("/Media/Charizard.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: fixed;
+        top: 10%;
+        right: 0;
+        width: 15%;
+        height: 100vh;
+        background-color: red;
+         border-image: url("/Media/Frame.png") 75 round;
+        border-style: solid;
+        border-width: 10px;
+       
+        
+    }
+
+    .top-left-button {
+        font-family: inherit;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background-color: #cecb15;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 9999; 
+    }
+
+    h1 {
+        grid-area: title; 
+        color: white;
+        text-shadow:
+            -1px -1px 0 #000000,  
+             1px -1px 0 #000000,
+            -1px  1px 0 #000000,
+             1px  1px 0 #000000;
+        position: relative; 
+        z-index: 1;
+        padding-top: 20px; /* Adicionar espaço acima do título */
+    }
+
+
+}
+
 
  
