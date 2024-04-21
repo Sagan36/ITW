@@ -1,0 +1,46 @@
+Contribuições;
+=========================================
+Dinis Garcia  n62269
+-Menu.html
+-Menu.css
+-Jogo.html
+-Jogo.css
+-Index.css
+-Index.html
+-textfromTermsandServices.txt
+Gonçalo Seguro n62252
+-Jogo.css
+-Jogo.html
+-AboutUs.css
+-AboutUs.html
+-textfromTermsandServices.txt
+-Numberplayers.css
+-NumberPlayers.html
+Ricardo Avelãs n62257
+-Jogo.html
+-Jogo.css
+-Leaderboards.css
+-LeaderBoards.html
+-Login.css
+-Login.html
+
+Cada elemento contribui igualmente na 
+prática do Projeto.
+
+=========================================
+
+Funcionalidades Adicionais Realizadas;
+-Como muitas destas Funcionalidades Adicionais, necessitam
+de JavaScript ainda não estão funcionais. 
+
+=========================================
+Notas;
+Para adaptarmos a tamanhos diferentes tipos de janelas,
+tivemos em conta o tamanho de um telemóvel e o ecrã de 
+um Laptop normal.
+No ficheiro NumberPlayers.html ao escolhermos o numero de players, 
+este vai ser reencaminhado para o login o numero de vezes igual ao
+numero de players escolhido.
+
+
+
