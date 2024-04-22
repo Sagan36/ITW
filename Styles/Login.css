@@ -107,7 +107,7 @@ header{
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 3px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*alinha as boxes do login */
 }
 
 .login-container button {

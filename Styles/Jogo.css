@@ -51,7 +51,7 @@ header{
 #Jogo{
     grid-area: Jogo;
 }
-/*Pontos*/
+/*Markers de lado*/
 
 .vertical-box{ 
     background-color: rgba(255, 225, 0, 0.5);
@@ -72,18 +72,18 @@ header{
 
 .multiple-choice-buttons input[type="radio"] {
     appearance: none; 
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    -webkit-appearance: none; /*retira o daefaut input para customizaçao pessoal */
+    -moz-appearance: none;  /*retira o daefaut input para customizaçao pessoal */
     width: 25px; 
     height: 25px; 
     border-radius: 50px;
     cursor: pointer; 
-    background-image: url(/Media/Unchecked.png);
+    background-image: url(/Media/Unchecked.png); /*quando está unchecked */
     background-position: center;
     background-size: 100%
 }
 
-.multiple-choice-buttons input[type="radio"]:checked {
+.multiple-choice-buttons input[type="radio"]:checked { /*quando está checked */
     background-image: url(/Media/Checked.png);
 }
 

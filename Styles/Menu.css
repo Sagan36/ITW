@@ -74,7 +74,7 @@ iframe{
     border-width: 7px;
     border-style: solid;
     border-image: url("/Media/Frame.png") 75 repeat; 
-    overflow: hidden;
+    overflow: hidden; /*faz com que o background não se repita */
 
 }
 /* Como jogar */
