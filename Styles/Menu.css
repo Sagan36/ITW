@@ -192,7 +192,7 @@ iframe{
         font-size: 1rem;
     }
 }
-/*Telemovel*/
+/* Telemovel */
 @media screen and (max-width: 599px){
     
     .menu {
@@ -209,7 +209,7 @@ iframe{
             "Footer";
         overflow: auto;
     }
-
+    
     .tutorial{
         width: 300px;
         height: 200px;
