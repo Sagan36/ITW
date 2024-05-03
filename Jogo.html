@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/Jogo.css">
+    <script src="Scripts/Jogo.js"></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -152,22 +153,24 @@
                 3:00
             </label>
         </form>
-            <button class="Aplicar"><h2>Aplicar</h2></button>
-            <button class="Terminar"><h2>Terminar</h2></button>
+        <button class="Aplicar"><h2>Aplicar</h2></button>
+        <button class="Terminar"><h2>Terminar</h2></button>
     </div>
+    
     <div class="vertical-box" id="Pontos">
         <h2>Tempo</h2>
-        <p>1:22</p>
+        <p id="Time">1:22</p>
         <h2>Vidas</h2>
+        <p id="Lives"></p>
         <img src="/Media/Checked.png">
         <img src="/Media/Checked.png">
         <img src="/Media/Checked.png">
         <img src="/Media/Unchecked.png">
         <img src="/Media/Unchecked.png">
         <h2>Pares Feitos</h2>
-        <p>4</p>
+        <p id ="MatchedPairs">4</p>
         <h2>Pares por Encontrar</h2>
-        <p>6</p>
+        <p id="UnMathcedPairs">6</p>
 
 
 
