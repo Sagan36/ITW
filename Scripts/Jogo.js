@@ -1,9 +1,35 @@
-// let Customizaçoes = {
+//NOTA: NOS USAMOS O CONSOLE LOG PARA TERMOS A CERTEZA QUE O CODIGO ESTA A FUNCIONAR E 
+//O PROFESSOR TAMBER TER ESTA ACERTEZA
+//constantes que possamos fazer
 
-//     Dificuldade: "Normal",
-//     Tempo: "Cronometro",
 
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Objetos que possamos fazer
+let Customizaçoes = {
+
+    Dificuldade: "Normal",
+    Tempo: "Cronometro",
+
+}
 
 
 // function CardMaker(value, CardFront, CardBack, CardSpin){
@@ -36,19 +62,34 @@
 // }
 
 
-function PointsUpdater(Time, MatchedPairs, Lives, UnMatched){
+// function PointsUpdater(Time, MatchedPairs, Lives, UnMatched){
     
-    document.getElementById('Time').textContent = Time;
-    document.getElementById('MatchedPairs').textContent = MatchedPairs;
-    document.getElementById('Lives').textContent = Lives;
-    document.getElementById('UnMathcedPairs').textContent = UnMatched;
+//     document.getElementById('Time').textContent = Time;
+//     document.getElementById('MatchedPairs').textContent = MatchedPairs;
+//     document.getElementById('Lives').textContent = Lives;
+//     document.getElementById('UnMathcedPairs').textContent = UnMatched;
 
+// }
+
+window.addEventListener("load", VamoBora);
+
+function VamoBora(){
+    addEventOptions()
 }
 
-function Stopwatch(newtime){
-    // newTime é um tempo que advem do value do botao das customizaçoes, que vai atualizar o objecto Custimizacçoes.time
-    
+function addEventOptions() {
+    document.getElementById("Dificuldade").addEventListener('change', DifficultyOptions);
+    document.getElementById("Tempo").addEventListener('change', TimeOptions);
 }
 
+function DifficultyOptions(event) {
+    Customizaçoes.Dificuldade = event.target.value;
+    console.log('Selected Difficulty:', Customizaçoes.Dificuldade);
+}
+
+function TimeOptions(event) {
+    Customizaçoes.Tempo = event.target.value;
+    console.log('Selected Time:', Customizaçoes.Tempo);
+}
 
 
