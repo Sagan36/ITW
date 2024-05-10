@@ -3,6 +3,8 @@
 @import url("/Media/webfontkit-20240419-143343/stylesheet.css");
 html{
     font-family: "pokemon_solidnormal", sans-serif ;
+    src: url('caminho/para/pokemon_solidnormal.woff2') format('woff2'), 
+         url('caminho/para/pokemon_solidnormal.woff') format('woff'); 
     background-image: url(/Media/ImagemdeFundo.jpg);
     height: auto;
     width: auto;
@@ -31,3 +33,22 @@ a{
 }
  
 /*=============================*/
+
+@media screen and (max-width: 599px) {
+    
+    .top-left-button {
+    font-family: inherit;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    }
+
+}

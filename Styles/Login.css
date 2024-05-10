@@ -148,22 +148,28 @@ header{
             "Header"
             "Imagem"
             "Caixa"
-            "Left"
-            "Right"
             "Footer";
-        grid-gap: 10px;
+        grid-gap: 5px;
     }
 
-
+    .background{
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
     .login > * {
         margin: 0;
         padding: 0;
     }
 
-  
+    .vertical-bookmark{
+        border: none;
+    }
     #Caixa {
         margin-top: 0;
     }
+    
+
 }
 
 

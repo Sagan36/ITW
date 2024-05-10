@@ -2,12 +2,7 @@
 //O PROFESSOR TAMBER TER ESTA ACERTEZA
 //constantes que possamos fazer
 
-
-
-
-
-
-
+const BOTAO_COMECAR_JOGO = "btnStartGame"
 
 
 
@@ -62,24 +57,26 @@ let Customizaçoes = {
 // }
 
 
-// function PointsUpdater(Time, MatchedPairs, Lives, UnMatched){
+ function PointsUpdater(Time, MatchedPairs, Lives, UnMatched){
     
-//     document.getElementById('Time').textContent = Time;
-//     document.getElementById('MatchedPairs').textContent = MatchedPairs;
-//     document.getElementById('Lives').textContent = Lives;
-//     document.getElementById('UnMathcedPairs').textContent = UnMatched;
+     document.getElementById('Time').textContent = Time;
+     document.getElementById('MatchedPairs').textContent = MatchedPairs;
+     document.getElementById('Lives').textContent = Lives;
+     document.getElementById('UnMathcedPairs').textContent = UnMatched;
 
-// }
+ }
 
 window.addEventListener("load", VamoBora);
 
 function VamoBora(){
     addEventOptions()
+    
 }
 
 function addEventOptions() {
     document.getElementById("Dificuldade").addEventListener('change', DifficultyOptions);
     document.getElementById("Tempo").addEventListener('change', TimeOptions);
+    document.getElementById(BOTAO_COMECAR_JOGO).addEventListener("click", StartGame)
 }
 
 function DifficultyOptions(event) {
@@ -92,4 +89,37 @@ function TimeOptions(event) {
     console.log('Selected Time:', Customizaçoes.Tempo);
 }
 
+let timerInterval = 0;
+
+function StartGame(){
+    addEventOptions();    
+
+
+        timerInterval = setInterval(updateTimer, 1000);
+            }
+
+function updateTimer() {
+    if (Customizaçoes.Tempo === "1:00") {
+        let timeRemaining = 60 - Math.floor((Date.now() - Math.floor(Date.now() / 1000) * 1000) / 1000);
+        document.getElementById('Time').textContent = formatTime(timeRemaining);
+        console.log(formatTime(timeRemaining))
+    } else if (Customizaçoes.Tempo === "2:00"){
+    let timeRemaining = 120 - Math.floor((Date.now() - Math.floor(Date.now() / 1000) * 1000) / 1000);
+        document.getElementById('Time').textContent = formatTime(timeRemaining);
+        console.log(formatTime(timeRemaining))
+    } else if (Customizaçoes.Tempo === "3:00"){
+    let timeRemaining = 180 - Math.floor((Date.now() - Math.floor(Date.now() / 1000) * 1000) / 1000);
+        document.getElementById('Time').textContent = formatTime(timeRemaining);
+        console.log(formatTime(timeRemaining))
+    }
+
+
+
+}   
+
+function formatTime(timeInSeconds) {
+    let minutes = Math.floor(timeInSeconds / 60);
+    let seconds = timeInSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
 
