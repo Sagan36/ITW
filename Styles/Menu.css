@@ -100,12 +100,20 @@ iframe{
          1px -1px 0 #000000,
         -1px  1px 0 #000000,
          1px  1px 0 #000000;
-
+    margin-bottom: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    background-color: none; 
+    text-align: center; 
+    padding: 20px 0; 
 }
+
 .footer-display a {
     color: rgb(33, 32, 141);
-    text-shadow: none
-
+    text-shadow: none;
 }
 
 
@@ -166,7 +174,7 @@ iframe{
 }
 
 /* Laptop*/
-@media screen and (min-width: 992px){
+@media screen and (min-width: 600px){
     h1{
         font-size: 2rem;
     }
@@ -227,8 +235,12 @@ iframe{
         height: 300px;
         width: 250px;
     }
+    
+    .footer-display{
+        position: relative;
+    }
     footer h2{
-        font-size: 1rem;
+        font-size: 1rem;       
     }
 
     h1{

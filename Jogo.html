@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/Jogo.css">
+    <script src="Scripts/Jogo.js"></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -119,9 +120,9 @@
     </div>
     <div class="vertical-box" id="Opcoes">
         <h2>Dificuldade</h2>
-        <form class="multiple-choice-buttons">
+        <form class="multiple-choice-buttons" id="Dificuldade">
             <label>
-                <input type="radio" name="difficulty" value="Facil">
+                <input type="radio" name="difficulty" value="Facil" id="epico">
                 Facil
             </label>
             <label>
@@ -134,7 +135,7 @@
             </label>
         </form>
         <h2>Tempo</h2>
-        <form class="multiple-choice-buttons">
+        <form class="multiple-choice-buttons" id="Tempo">
             <label>
                 <input type="radio" name="time" value="Cronometro">
                 Cronometro
@@ -152,28 +153,30 @@
                 3:00
             </label>
         </form>
-            <button class="Aplicar"><h2>Aplicar</h2></button>
-            <button class="Terminar"><h2>Terminar</h2></button>
+        <button class="Aplicar"><h2>Aplicar</h2></button>
+        <button class="Terminar"><h2>Terminar</h2></button>
     </div>
+    
     <div class="vertical-box" id="Pontos">
         <h2>Tempo</h2>
-        <p>1:22</p>
+        <span id="Time">0</span>
         <h2>Vidas</h2>
+        <p id="Lives"></p>
         <img src="/Media/Checked.png">
         <img src="/Media/Checked.png">
         <img src="/Media/Checked.png">
         <img src="/Media/Unchecked.png">
         <img src="/Media/Unchecked.png">
         <h2>Pares Feitos</h2>
-        <p>4</p>
+        <p id ="MatchedPairs">4</p>
         <h2>Pares por Encontrar</h2>
-        <p>6</p>
+        <p id="UnMathcedPairs">6</p>
 
 
 
     </div>
     <div id="Start">
-        <button class="Comecar"><h1>Comecar</h1></button>
+        <button class="Comecar" id="btnStartGame"><h1>Comecar</h1></button>
         
     </div>
     </a>
