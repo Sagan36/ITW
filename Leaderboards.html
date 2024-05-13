@@ -4,202 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="Styles/Login.css"> -->
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/leaderboard.css">
     <title>Jogo da Memória</title>
 </head>
 <body>
-    <audio id="background-music" autoplay loop>
-        <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
-    </audio>
-    <h1>Leaderboards</h1>
-    <a href="Menu.html"> <button class="top-left-button">Voltar</button></a>
-    <div class="grid_leaderboard">
-    <div class="wrapper">
-        <div class="lboard_section">
-            <div class="lboard_tabs">
-                <div class="tabs">
-                    <ul>
-                        <li data-li="Easy">Easy</li>
-                        <li class="active" data-li="Medium">Medium</li>
-                        <li data-li="Hard">Hard</li>
-                    </ul>
-                </div>
-            </div>
-    
-            <div class="lboard_wrap">
-                <div class="lboard_item month" style="display: block;">
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/james.jpg" alt="picture_2">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>1.</span> Manel</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            80 segundos
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/snorlax.jpg" alt="picture_3">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>2.</span>Maria</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            90 segundos
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/meowth.jpg" alt="picture_1">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>3.</span>Matilde</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            100 segundos
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/slakoth.jpg" alt="picture_5">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>4.</span>Mafalda</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            110 segundos
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/arcanine.jpg" alt="picture_4">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>5.</span>Mario</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            120 segundos
-                        </div>
-                    </div>
-                </div>
-             
-            </div>
-        </div>
-    </div>	
+  <audio id="background-music" autoplay loop>
+    <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
+  </audio>
+    <a href="Menu.html" class="top-left-button">Voltar</a>
+    <a href="1PlayerLogin.html" class="top-right-button">Estatisticas pessoais</a>
+    <header><h2>Leaderboard Mundiais</h2></header>
+    <div class="login">
+      <!-- <div id="Imagem">
+        <img src="/Media/Login.gif" alt="Example GIF">
+      </div>  -->
+      <div class="login-container" id="Caixa">
+        <h2>Login</h2>
+        <form action="Jogo.html" method="get">
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Pontos</th>
+                    <th>Genero</th>
+                    <th>Idade</th>
+                </tr>
+                <tr>
+                    <td>Ricardo</td>
+                    <td>100 pontos</td>
+                    <td>Masculino</td>
+                    <td>Adulto</td>
+                </tr>
+                <tr>
+                    <td>Dinis</td>
+                    <td>80 pontos</td>
+                    <td>Outro</td>
+                    <td>Criança</td>
+                </tr>
+                <tr>
+                    <td>Gonçalo</td>
+                    <td>60 pontos</td>
+                    <td>Outro</td>
+                    <td>Idoso</td>
+                </tr>
+            </table>
+        </form>
+      </div>
+      <div class="vertical-bookmark" id="Right">
+        
+      </div>
+      <div class="vertical-bookmark" id="Left">
+        
+      </div>
+      <footer>
+        Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo
+          Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+          <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+      </footer>
 
-
-
-
-
-
-    <div class="wrapper">
-        <div class="lboard_section">
-            <div class="lboard_tabs">
-                <div class="tabs">
-                    <ul>
-                        <li data-li="tempo jogado">tempo jogado</li>
-                        <li class="active" data-li="Estatisticas">Estatisticas</li>
-                        <li data-li="diferente">Diferente</li>
-                    </ul>
-                </div>
-            </div>
-    
-            <div class="lboard_wrap">
-                <div class="lboard_item month" style="display: block;">
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/snorlax.jpg" alt="picture_2">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>1.</span> jogos sem perder Vidas</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 5%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            20 jogos
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/meowth.jpg" alt="picture_3">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>2.</span>Pares encontrados</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            30 Pares
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/james.jpg" alt="picture_1">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>3.</span>Numero de jogos</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 40%;"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            50 jogos 
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/arcanine.jpg" alt="picture_5">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>4.</span>Win rate</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 46%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            46%
-                        </div>
-                    </div>
-                    <div class="lboard_mem">
-                        <div class="img">
-                            <img src="Media/slakoth.jpg" alt="picture_4">
-                        </div>
-                        <div class="name_bar">
-                            <p><span>5.</span>Pares encontrados de seguida</p>
-                            <div class="bar_wrap">
-                                <div class="inner_bar" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div class="points">
-                            3 pares 
-                        </div>
-                    </div>
-                </div>
-             
-            </div>
-        </div>
-    </div>	
-</div>  
-   
+  
+  
+  
+  
+  
+  </div>
 </body>
 </html>

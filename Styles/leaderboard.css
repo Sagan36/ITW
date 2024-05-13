@@ -1,181 +1,181 @@
-/* ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 */
-/*================================================================*/
-    /* leaderboard */
-    /* leaderboard */
-    h1{
-        text-align: center;
-    }
-    .wrapper{
-        width: 100%;
-        height: 100%;
-        gap: 100px;
-    }
-    
-    .lboard_section{
-        font-family: Arial, Helvetica, sans-serif;
-        width: 500px;
-        height: 400px;
-        margin: 10px auto 0;
-        background: #f94f62;
-        padding: 25px 40px;
-        position: relative;
-        border-radius: 5px;
-    }
-    
-    .lboard_section .lboard_tabs ul{
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-    }
-    
-    .lboard_section .lboard_tabs ul li{
-        font-family: Arial, Helvetica, sans-serif;
-        margin-right: 50px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #3a3d51;
-        cursor: pointer;
-    }
-    
-    .lboard_section .lboard_tabs ul li:hover,
-    .lboard_section .lboard_tabs ul li.active{
-        color: #fff;
-    }
-    
-    .lboard_wrap{
-        font-family: Arial, Helvetica, sans-serif;
-        position: absolute;
-        top: 70px;
-        left: 40px;
-        background: #ffd300;
-        width: 100%;
-        height: 100%;
-        border-radius: 5px;
-    }
-    
-    .lboard_wrap .lboard_item{
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 25px;
-    }
-    
-    .lboard_wrap .lboard_mem{
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        align-items: center;
-        padding: 15px 0;
-        border-bottom: 1px solid #ffe773;
-    }
-    
-    .lboard_wrap .lboard_mem:first-child{
-        font-family: Arial, Helvetica, sans-serif;
-        padding-top: 0;
-    }
-    
-    .lboard_wrap .lboard_mem:last-child{
-        font-family: Arial, Helvetica, sans-serif;
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
-    
-    .lboard_wrap .lboard_mem .img{
-        font-family: Arial, Helvetica, sans-serif;
-        width: 50px;
-    }
-    
-    .lboard_wrap .lboard_mem img{
-        font-family: Arial, Helvetica, sans-serif;
-        display: block;
-        width: 100%;
-    }
-    
-    .lboard_wrap .lboard_mem .name_bar{
-        font-family: Arial, Helvetica, sans-serif;        
-        margin: 0 20px;
-        width: calc(100% - 150px);
-    }
-    
-    .lboard_wrap .lboard_mem .name_bar p{
-        font-family: Arial, Helvetica, sans-serif;
-        color: #3a3d51;
-    }
-    
-    .lboard_wrap .lboard_mem .name_bar p span{
-        font-family: Arial, Helvetica, sans-serif;
-        margin-right: 5px;
-    }
-    
-    .lboard_wrap .lboard_mem .points{
-        font-family: Arial, Helvetica, sans-serif;
-        width: 100px;
-        color: #3a3d51;
-    }
-    
-    .lboard_wrap .lboard_mem .name_bar .bar_wrap{
-        font-family: Arial, Helvetica, sans-serif;
-        width: 100%;
-        height: 5px;
-        background: #d5b000;
-        margin-top: 5px;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-     
-    .lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
-        font-family: Arial, Helvetica, sans-serif;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 5px;
-        background: #fff;
-        border-radius: 5px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-    }
+body{
+    text-align: center;
+    background-size: auto;
+
+}
+
+h2{
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
+}
+h1{
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+    font-size: 3rem;
+}
+
+/*Grid */
+.login{
+    display: grid;
+    grid-template-columns: 40% 20% 40;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+    "Header Header Header"
+    "Left Caixa Right" 
+    "Left Caixa Right"
+    "Left Caixa Right"
+    "Footer Footer Footer"
+    ;
+    overflow: auto;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    top: 57px;
+    margin: 40px;
+}
+
+#Right{
+    grid-area: Right;
+    background-image: url(/Media/Grund.png);
 
 
-    .grid_leaderboard{
-        display: grid;
+}
+
+
+#Left{
+    grid-area: Left;
+    background-image: url(/Media/Deoxys.gif);
+
+}
+
+#Caixa{
+    grid-area: Caixa;
+}
+
+#Imagem{
+    grid-area: Imagem;
+}
+
+header{
+    grid-area: Header;
+}
+
+footer{
+    grid-area: Footer;
+}
+
+header{
+    grid-area: Header;
+}
+/* Bookmarks */
+.vertical-bookmark { 
+    background-color: aqua;
+    color: white;
+    font-size: 20px;
+    height: 800px;
+    border-radius: 10px;
+    border-image: url("/Media/Frame.png") 75 round;
+    border-style: solid;
+    border-width: 10px;
+}
+/*caixa login*/
+.login-container {
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,);
+    padding-top: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; /
+ 
+}
+
+.login-container h2 {
+    margin-top: 10px; 
+}
+
+.login-container table {
+    display: block; 
+    margin-top: 20px; 
+}
+
+/*Login*/
+.footer-display {
+    font-size: 1rem;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+
+}
+.footer-display a {
+    color: rgb(33, 32, 141);
+    text-shadow: none
+
+}
+
+
+/* botão para pessoal */
+
+.top-right-button {
+    font-family: inherit;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #cecb15;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+    
+    .login {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
         grid-template-areas:
-         "leader1 leader2"; 
-
-        grid-template-columns: 1300px 10%;
-      
+            "Header"
+            "Imagem"
+            "Caixa"
+            "Left"
+            "Right"
+            "Footer";
+        grid-gap: 10px;
     }
-    @media screen and (max-width:768px){
-        .grid_leaderboard{
-            
-            grid-template-columns: 90%;
-            grid-template-rows: auto auto;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            gap: 50px; ;
-            grid-template-areas: 
-            "Wrapper"
-            "Wrapper"
-            ;
-            height: 91vh;
-    } 
-    }   
 
-    /* @media only screen and (min-width: 600px) {
-        .parent {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto auto auto;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            }
-    
-        header { grid-area: 1 / 1 / 2 / 3; }
-        #parte1 { grid-area: 2 / 1 / 3 / 2; }
-        #parte2 { grid-area: 2 / 2 / 3 / 3; }
-        footer { grid-area: 3 / 1 / 4 / 3; }
-    
-        .imagem{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-    } */
+
+    .login > * {
+        margin: 0;
+        padding: 0;
+    }
+
+  
+    #Caixa {
+        margin-top: 0;
+    }
+}
+
+
