@@ -1,7 +1,6 @@
-/* ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 */
 .jogo{
     display: grid;
-    grid-template-columns: 11% 78% 11%;
+    grid-template-columns: 15% 64% 15%;
     grid-template-rows: 20% 55% 25%;
     grid-template-areas: 
     "Header Header Header"
@@ -15,16 +14,6 @@
     margin-right: 20px;
 }
 
-h2{
-    color: #e4e714;
-    text-shadow: 
-        -1px -1px 0 #000000,  
-         5px -1px 0 #000000,
-        -1px  1px 0 #000000,
-         1px  1px 0 #000000;
-
-
-}
 header{
     grid-area: Header;
     padding-bottom: 40px;
@@ -37,13 +26,10 @@ header{
     font-size: 25px;
 }
 
-#Opcoes{
-    grid-area: Opcoes;
-}
 #Pontos{
     grid-area: Pontos;
-
 }
+
 #Start{
     grid-area: Start;
 }
@@ -51,13 +37,14 @@ header{
 #Jogo{
     grid-area: Jogo;
 }
+
 /*Markers de lado*/
 
 .vertical-box{ 
     background-color: rgba(255, 225, 0, 0.5);
     color: black;
     font-size: 20px;
-    height: 700px;
+    height: 100%;
     border-radius: 10px;
     background-position: 70% 30%;
     text-shadow: 
@@ -78,12 +65,12 @@ header{
     height: 25px; 
     border-radius: 50px;
     cursor: pointer; 
-    background-image: url(/Media/Unchecked.png); /*quando está unchecked */
+    background-image: url(/Media/Unchecked.png); 
     background-position: center;
     background-size: 100%
 }
 
-.multiple-choice-buttons input[type="radio"]:checked { /*quando está checked */
+.multiple-choice-buttons input[type="radio"]:checked { 
     background-image: url(/Media/Checked.png);
 }
 
@@ -115,6 +102,7 @@ header{
     background-position: center;
     background-size: 150%;
 }
+
 /* Terminar o Jogo Manualmente */
 .Terminar{
     margin: 10px auto;
@@ -130,7 +118,6 @@ header{
         -1px  1px 0 #000000,
          1px  1px 0 #000000;
     font-family: inherit;
-
 }
 
 .Terminar:hover{
@@ -138,6 +125,7 @@ header{
     background-position: center;
     background-size: 150%;
 }
+
 .Terminar h2{
     color: rgb(214, 48, 48);
 }
@@ -172,17 +160,15 @@ header{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(4,1fr);
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     gap: 10px;
     margin:70px auto;
     background-color: rgba(255, 225, 0, 0.5);
-    padding: 5px;
-    border: 10px solid transparent;
-    border-image: url("/Media/Frame.png") 75 round;
-    }
+    padding: 5px
+}
 
-    .cartinha{
+.cartinha{
     width: 100%;
     height: 165px; 
     position: relative;
@@ -217,172 +203,3 @@ header{
         background-position: center;
         
     }
-
-  
-
-/* Laptops pequenos  */
-@media screen and (min-width: 992px){
-    .jogo{
-        grid-template-columns: 10% 80% 10%;
-        grid-template-rows: auto auto auto;
-        overflow: auto;
-        margin-left: 50px;
-        margin-right: 50px;
-        grid-row-gap: 0px;
-    }
-    header{
-        padding-bottom: 0px;
-        text-align: center;
-        display: inline-block;
-    }
-    
-    .board{
-        width: 40%;
-        max-width: 50%;
-        margin:0px auto;
-        padding: 5px;
-        }
-
-    .cartinha{
-        width: 100%;
-        height: 80px; 
-    }
-    .vertical-box{ 
-    font-size: 10px;
-    height: 390px;
-    width: 90%;
-    border: 5px solid transparent;
-    border-image: url("/Media/Frame.png") 75 round;
-    }
-    h1{
-        font-size: 2rem;
-    }
-    h2{
-        font-size: 1rem;
-    }
-    .multiple-choice-buttons input[type="radio"] {
-        width: 12px; 
-        height: 12px; 
-        border-radius: 20px;
-        display: inline-block;
-    }
-    .Aplicar h2{
-        font-size: 14px;
-
-    }
-    .Terminar h2{
-        font-size: 14px
-    }
-    .Comecar h1{
-        font-size: 20px;
-    }
-    .multiple-choice-buttons label {
-        width: 90px; 
-    }
-    .number{
-        left: 40px;
-        top: 50%;
-        transform: translateY(-50%);
-    }    
-}
-
-/*telemoveis*/
-
-@media screen and (max-width: 599px){
-    .jogo{
-        grid-template-columns: 80% 20%;
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas:
-        
-        "Header Header"
-        "Jogo Pontos"
-        "Start Pontos"
-        "Opcoes Opcoes"
-        
-        ;
-        overflow: auto;
-        margin-left: 0px;
-        margin-right: 0px;
-        grid-row-gap: 0px;
-    }
-    header{
-        padding-bottom: 0px;
-        text-align: center;
-        display: inline-block;
-    }
-    
-    .board{
-        width: 100%;
-        max-width: 50%;
-        margin:0px auto;
-        padding: 0px;
-        gap: 2px;
-        }
-
-    .cartinha{
-        width: 100%;
-        height: 50px; 
-    }
-    .vertical-box{ 
-    font-size: 10px;
-    height: 400px;
-    width: 100%;
-    border: 5px solid transparent;
-    border-image: url("/Media/Frame.png") 75 round;
-    text-align: center;
-    }
-
-    #Opcoes.vertical-box{
-        height: 250px;
-    }
-   
-
-    
-    h1{
-        font-size: 2rem;
-    }
-    h2{
-        font-size: 1rem;
-    }
-    .multiple-choice-buttons input[type="radio"] {
-        width: 15px; 
-        height: 15px; 
-        border-radius: 20px;
-        display: inline-block;
-    }
-    .Aplicar h2{
-        font-size: 14px;
-
-    }
-    .Terminar h2{
-        font-size: 14px
-    }
-    .Comecar h1{
-        font-size: 20px;
-    }
-    .multiple-choice-buttons label {
-        width: 90px; 
-    }     
-
-#Voltar{
-    font-size: 1rem;
-    padding: 4px;
-}
-    .number{
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }    
-}
-
-
-
-
-
-
-
-
-
-
-
-
