@@ -1,44 +1,43 @@
-//constantes
+// Constants
+const USERNAME = 'username';
+const PASSWORD = 'password';
+const CONFIRM_PASSWORD = 'confirmpassword';
+const AGE = 'age';
+const GENDER = 'gender';
 
-const USERNAME = 'username'
-const PASSWORD = 'password'
-const CONFIRM_PASSWORD = 'confirmpassword'
-const AGE = 'age'
-const GENDER = 'gender'
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("registerForm").addEventListener("submit", register);
+});
 
-
-function UserInfo(username, password, confirmpassword, gender, age){
-    // funcao construtora de novos users
-    this.username = username
-    this.password = password
-    this.confirmpassword = confirmpassword
-    this.gender = gender
-    this.age = age
+function UserInfo(username, password, gender, age) {
+    // Constructor function for new users
+    this.username = username;
+    this.password = password;
+    this.gender = gender;
+    this.age = age;
 }
 
-function register(){
+function register(event) {
+    event.preventDefault();
 
+    let newPassword = document.getElementById(PASSWORD).value;
+    let confirmPassword = document.getElementById(CONFIRM_PASSWORD).value;
 
-    User = new UserInfo(
-        document.getElementById(USERNAME).value,
-        document.getElementById(PASSWORD).value,
-        document.getElementById(CONFIRM_PASSWORD).value,
-        document.getElementById(AGE).value,
-        document.getElementById(AGE).value
-    )
+    if (newPassword !== confirmPassword) {
+        console.log("Passwords are not equal.");
+        alert("The password fields do not match.");
+    } else {
+        let user = new UserInfo(
+            document.getElementById(USERNAME).value,
+            newPassword,
+            document.getElementById(GENDER).value,
+            document.getElementById(AGE).value
+        );
 
-    if(PASSWORD !== CONFIRM_PASSWORD){
-
-        alert("O campo Password nao esta igual ao campo Confirmar Password.")
-
+        let userDataJSON = JSON.stringify(user);
+        localStorage.setItem(user.username, userDataJSON);
+        console.log("User added to local storage.");
+        // Redirect to login page after successful registration
+        window.location.href = "1PlayerLogin.html";
     }
-
-
-
-    
-    
- 
-
-
-
 }
