@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("registerForm").addEventListener("submit", register);
 });
 
-function UserInfo(username, password, gender, age) {
+function NewUserInfo(username, password, gender, age) {
     // Constructor function for new users
     this.username = username;
     this.password = password;
@@ -27,7 +27,7 @@ function register(event) {
         console.log("Passwords are not equal.");
         alert("The password fields do not match.");
     } else {
-        let user = new UserInfo(
+        let user = new NewUserInfo(
             document.getElementById(USERNAME).value,
             newPassword,
             document.getElementById(GENDER).value,

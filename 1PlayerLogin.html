@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles/Login.css">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
-    <script src="Scripts/Register.js"></script>
+    <script src="Scripts/1PlayerLogin.js"></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -21,25 +21,12 @@
       </div> 
       <div class="login-container" id="Caixa">
         <h2>Login</h2>
-        <form action="Jogo.html" method="get">
-          <input type="text" name="username" placeholder="Username" required>
-          <input type="password" name="password" placeholder="Password" required>
-          <select name="faixa etaria" required>
-            <option value="" disabled selected> Age group</option>
-            <option value="criança">criança(0-12)</option>
-            <option value="adolescente">adolescente(13-17) </option>
-            <option value="adulto">adulto(18-64)</option>
-            <option value="idoso">idoso(65+anos)</option>
-          </select>
-          <select name="gender" required>
-            <option value="" disabled selected>Select your gender</option>
-            <option value="male">Masculino</option>
-            <option value="female">Feminino</option>
-            <option value="other">Outro</option>
-          </select>
+        <form id="loginform">
+          <input type="text" name="username" placeholder="Username" id="usernameLogin" required>
+          <input type="password" name="password" placeholder="Password" id="passwordLogin" required>
           <a href="Jogo.html" class="buttonLog"><button type="submit">Login</button></a>
         </form>
-      <button id="btnLogin" href="Register.html">Se ainda nao tiveres conta. Regista-te!</button>
+      <a href="Register.html">Se ainda nao tiveres te regtistado, Registate!</a>
       </div>
       <div class="vertical-bookmark" id="Right">
         
