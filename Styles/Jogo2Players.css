@@ -137,8 +137,8 @@ header{
     }
 
     .face{
-        width: 110%;
-        height: 110%;
+        width: auto;
+        height: auto;
         position: relative;
 
         color: #ffffff;

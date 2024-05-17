@@ -67,14 +67,14 @@ function StartGame(){
             card.id = r.toString() + '|' + c.toString(); // Cria id da carta como a posição dela no tabuleiro
             card.src = '/Media/' + CardImgName + '.jpg'
             card.classList.add("cartinha");
-            document.getElementById(BOTAO_COMECAR_JOGO).addEventListener("click",(card.addEventListener('click', handleCardClick)));
+            card.addEventListener('click', handleCardClick);
             document.getElementById('Jogo').append(card);
         }
         Board.push(rows);
     }
     
     console.log(Board);
-    setTimeout(BackofTheCards, 1000);
+    setTimeout(BackofTheCards, 0);
     startPlayerTurn();
 }
 
@@ -95,7 +95,8 @@ function startPlayerTurn(){
             player1Time--;
             document.getElementById('Time').textContent = player1Time;
             if (player1Time === 0) {
-                switchPlayer();
+                clearInterval(timerInterval); 
+                switchPlayer(); 
             }
         }, 1000);
     } else {
@@ -104,14 +105,14 @@ function startPlayerTurn(){
             player2Time--;
             document.getElementById('Time').textContent = player2Time;
             if (player2Time === 0) {
-                switchPlayer();
+                clearInterval(timerInterval); 
+                switchPlayer(); 
             }
         }, 1000);
     }
 }
 
 function switchPlayer() {
-    clearInterval(timerInterval);
     CurrentPlayer = CurrentPlayer === 1 ? 2 : 1;
     startPlayerTurn();
 }
@@ -127,6 +128,8 @@ function updatePoints() {
     if (FoundPairsPlayer1 + FoundPairsPlayer2 === (Rows * Collums) / 2) {
         clearInterval(timerInterval);
         determineWinner();
+    } else {
+        startPlayerTurn(); 
     }
 }
 
@@ -158,12 +161,11 @@ function handleCardClick(event) {
     if (firstCard.src === secondCard.src) {
         disableCards();
         updatePoints();
-        switchPlayer();
     } else {
         unflipCards();
         switchPlayer();
     }
-}
+} 
 
 function disableCards() {
     firstCard.removeEventListener('click', handleCardClick);
