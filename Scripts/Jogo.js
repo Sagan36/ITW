@@ -41,7 +41,6 @@ var Board = []
     
      document.getElementById('Time').textContent = Time;
      document.getElementById('MatchedPairs').textContent = MatchedPairs;
-     document.getElementById('Lives').textContent = Lives;
      document.getElementById('UnMathcedPairs').textContent = UnMatched;
 
  }
@@ -51,6 +50,7 @@ window.addEventListener("load", VamoBora);
 function VamoBora(){
     Shuffle()
     StartGame()
+    LivesMaker()
     
 }
 
@@ -128,7 +128,7 @@ function StartGame(){
             card.classList.add("cartinha")
             card.addEventListener("click", ClickableCards);
             document.getElementById('Jogo').append(card);
-
+            
 
         }
         Board.push(rows)
@@ -148,7 +148,7 @@ function BackofTheCards(){
         card.src = "/Media/backcard.jpeg"
     
         }
-}
+    }
 }
 
 var FirstCard;
@@ -180,15 +180,28 @@ function ClickableCards(){
     console.log(SecondCard)
 }
 
+
 function CardsChecker(){
 
     if(FirstCard.src != SecondCard.src){
 
         FirstCard.src = "/Media/backcard.jpeg"
         SecondCard.src = "/Media/backcard.jpeg"
-        
+
+
     }
+
     FirstCard = null;
     SecondCard = null;
 
+}
+
+function LivesMaker(){
+
+    for(let e = 0; e < 5; e++){
+        let Lives = document.createElement('img')
+        Lives.id = e.toString()
+        Lives.src = "/Media/Unchecked.png"
+        document.getElementById('lives').append(Lives);
+    }
 }
