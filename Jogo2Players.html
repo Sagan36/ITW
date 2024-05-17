@@ -16,130 +16,26 @@
     <a href="Numberplayers.html" class="top-left-button" id="Voltar">Voltar</a>
     <div class="jogo">
         <header><h1>Lets Battle!</h1></header>
-        <div class="board" id="Jogo">
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">1</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">2</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">3</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">4</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">5</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">6</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">7</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">8</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">9</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">10</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">11</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">12</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">13</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">14</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">15</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">16</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">17</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-        
-            <div class="cartinha">
-                <div class="face front"><div class="number">18</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">19</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-
-            <div class="cartinha">
-                <div class="face front"><div class="number">20</div></div>
-                <div class="imagem_carta_fora"></div>
-            </div>
-        </div>
+        <div class="board" id="Jogo"></div>
     
         <div class="vertical-box" id="Opçoes">
 
             <h2>Jogador 1</h2>
-            <p>Tempo Restante: <span id="player1Time">15</span>s</p>
-            <p>Pontos: <span id="player1Points">0</span></p>
+            <div>Tempo Restante: <span id="Time">15</span></div>
+            
             <h2>Jogador 2</h2>
-            <p>Tempo Restante: <span id="player2Time">15</span>s</p>
-            <p>Pontos: <span id="player2Points">0</span></p>
+            <div>Tempo Restante: <span id="Time">15</span> </div>
         </div>
         
 
         <div class="vertical-box" id="Pontos">
-            <h2>Tempo</h2>
-            <span id="Time">0</span>
-            <h2>Pares Feitos</h2>
-            <p id ="MatchedPairs">4</p>
-            <h2>Pares por Encontrar</h2>
-            <p id="UnMathcedPairs">6</p>
+            <div>Pares Feitos Jogador 1: 
+                <p><span id="MatchedPairs1">0</span></p></div>
+            <p></p>
 
-
-
+            <div>Pares Feitos Jogador 2: 
+                <p><span id="MatchedPairs2">0</span></p></div>
+            <p></p>
         </div>
         <div id="Start">
             <button class="Comecar" id="btnStartGame"><h1>Começar</h1></button>        
