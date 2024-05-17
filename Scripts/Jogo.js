@@ -135,7 +135,7 @@ function StartGame(){
         
     }
 console.log(Board)
-setTimeout(BackofTheCards, 1000)
+setTimeout(BackofTheCards, 0)
 
 
 }
