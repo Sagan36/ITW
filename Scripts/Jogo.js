@@ -126,6 +126,7 @@ function StartGame(){
             card.id = r.toString() + '|' + c.toString()//Cria id da carta como a posicao dele na board
             card.src = '/Media/' + CardImgName + '.jpg'
             card.classList.add("cartinha")
+            card.addEventListener("click", ClickableCards);
             document.getElementById('Jogo').append(card);
 
 
@@ -148,4 +149,46 @@ function BackofTheCards(){
     
         }
 }
+}
+
+var FirstCard;
+var SecondCard;
+
+function ClickableCards(){
+    
+    if(this.src.includes("backcard")){//vemos se a carta no momento que aparece na board está virada para cima ou para baixo
+        if(!FirstCard){
+            FirstCard = this
+
+            let position = FirstCard.id.split("|");
+            let x = parseInt(position[0])
+            let y = parseInt(position[1])
+
+            FirstCard.src = "/Media/" + Board[x][y] + ".jpg"
+        }else if(!SecondCard && this != FirstCard){
+            SecondCard = this
+            
+            let position = SecondCard.id.split("|");
+            let x = parseInt(position[0])
+            let y = parseInt(position[1])
+
+            SecondCard.src = "/Media/" + Board[x][y] + ".jpg"
+            setTimeout(CardsChecker, 500)  
+        }
+
+    } 
+    console.log(SecondCard)
+}
+
+function CardsChecker(){
+
+    if(FirstCard.src != SecondCard.src){
+
+        FirstCard.src = "/Media/backcard.jpeg"
+        SecondCard.src = "/Media/backcard.jpeg"
+        
+    }
+    FirstCard = null;
+    SecondCard = null;
+
 }
