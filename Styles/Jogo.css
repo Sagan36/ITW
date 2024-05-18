@@ -184,8 +184,8 @@ header{
 
     .cartinha{
     width: 100%;
-    height: 165px; 
     position: relative;
+    height: auto;   
 
     }
 
