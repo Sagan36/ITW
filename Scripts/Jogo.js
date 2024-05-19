@@ -5,7 +5,8 @@
 const BOTAO_COMECAR_JOGO = "btnStartGame"
 const BOTAO_APLICAR = "btnCustoms"
 const BOTAO_TERMINAR = "btnFinnish"
-
+const PARES_POR_ENCONTRAR = "UnMatchedPairs"
+const PARES_ENCONTRADOS = "MatchedPairs"
 
 //Objetos que possamos fazer
 let Customizaçoes = {
@@ -17,8 +18,6 @@ let Customizaçoes = {
 
 // vars para o jogo que vai mudar
 
-var FoundPairs = 0
-var PairToFind = 0
 var CardListDificil = [
 
     'Normal',
@@ -53,19 +52,10 @@ var CardListFacil= [
 
 ]
 
-var CurrentCardListDifficulty = CardListDificil
+var CurrentCardListDifficulty;
 
 var Lifes = 0
 var Board = []
-
-
- function PointsUpdater(Time, MatchedPairs, Lives, UnMatched){
-    
-     document.getElementById('Time').textContent = Time;
-     document.getElementById('MatchedPairs').textContent = MatchedPairs;
-     document.getElementById('UnMathcedPairs').textContent = UnMatched;
-
- }
 
 window.addEventListener("load", VamoBora);
 
@@ -93,7 +83,7 @@ function Shuffle(){
         var i = Math.floor((Math.random()) * CardList.length)
         let f = CardList[i] 
         CardList[i] = CardList[x];
-        CardList[x] = f; 
+        CardList[x] = f;
     }
 }
 
@@ -112,11 +102,12 @@ Shuffle();
             card.src = '/Media/' + CardImgName + '.jpg'
             card.classList.add("cartinha")
             document.getElementById('Jogo').append(card); 
+            console.log(card)
             
         }
         Board.push(rows)
     }
-
+document.getElementById(PARES_POR_ENCONTRAR).textContent = (Rows * Collums) / 2    
 setTimeout(BackofTheCards,0)
 }
 
@@ -128,7 +119,8 @@ function StartGame(){
             card.addEventListener("click", ClickableCards);
         }
     }
-    setTimeout(BackofTheCards, 0)
+
+        setTimeout(BackofTheCards, 0)
 }
 
 function BackofTheCards(){
@@ -152,7 +144,7 @@ function ClickableCards(){
             FirstCard = this
 
             let position = FirstCard.id.split("|");
-            let x = parseInt(position[0])
+            let x = parseInt(positimion[0])
             let y = parseInt(position[1])
 
             FirstCard.src = "/Media/" + Board[x][y] + ".jpg"
@@ -168,7 +160,6 @@ function ClickableCards(){
         }
 
     } 
-    
 }
 
 let x = 0 // Isto e para conseguirmos que as vidas sejam as pokebolas para conseguirnmos os ids delas anteriormente formados na funcao LivesMaker
@@ -180,23 +171,32 @@ console.log(x)
         x = x + 1
         FirstCard.src = "/Media/backcard.jpeg"
         SecondCard.src = "/Media/backcard.jpeg"
+
+    }else{
+        document.getElementById(PARES_ENCONTRADOS).textContent = parseInt(document.getElementById(PARES_ENCONTRADOS).textContent) + 1
+        document.getElementById(PARES_POR_ENCONTRAR).textContent = parseInt(document.getElementById(PARES_POR_ENCONTRAR).textContent) - 1
     }
+
 
 if (x === 5 ){
     alert("Gastaste todas as tuas vidas! Boa sorte para a proxima!")
+}else if(document.getElementById(PARES_POR_ENCONTRAR == 0)){
+    alert("Parabéns ganhaste!!")
 }
 FirstCard = null;
 SecondCard = null;
+
     
 }
 
 function LivesMaker(){
     for(let e = 0; e < 5; e++){
+        
         let Lives = document.createElement('img')
         Lives.id = e.toString()
         Lives.src = "/Media/Unchecked.png"
         document.getElementById('lives').append(Lives);
-        
+                
     }  
 }
 //------------------------------------------------------------------------FIM DAS FUNCOES QUE FAZEM O JOGO-------------------------------------------------------------//
@@ -220,6 +220,8 @@ function initializeTimer() {
         timeRemaining = 120;
     } else if (Customizaçoes.Tempo === "3:00") {
         timeRemaining = 180;
+    }else if(Customizaçoes.Tempo === "Cronometro"){
+
     }
     // Update the timer display immediately`
     updateTimerDisplay();
@@ -267,16 +269,18 @@ function DifficultyChecker(){
 }
 
 function UpdatesBoard(){
+    
     document.getElementById('Jogo').innerHTML = ''
     DifficultyChecker()
     const jogoElement = document.getElementById('Jogo'); //Atualiza a grid no css
     jogoElement.style.gridTemplateRows = `repeat(${Rows}, 1fr)`;
     jogoElement.style.gridTemplateColumns = `repeat(${Collums}, 1fr)`;
+
 }
 
 
 
 function CustomizationsBTN(){
-    UpdatesBoard()
+
     MakesBoard()
 }
