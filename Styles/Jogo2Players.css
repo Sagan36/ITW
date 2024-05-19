@@ -122,7 +122,7 @@ header{
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(4,1fr);
     width: 100%;
-    max-width: 900px;
+    max-width: 75%;
     gap: 1vw;
     margin: 3vh auto;
     background-color: rgba(255, 225, 0, 0.5);
@@ -130,7 +130,7 @@ header{
 }
 
 .cartinha{
-    width: 90%;
+    width: 80%;
     height: 100px; 
     position: relative;
 
@@ -164,3 +164,51 @@ header{
         background-position: center;
         
     }
+
+@media only screen and (max-width: 599px) {
+    .jogo{
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    header {
+        font-size: 4vw;
+    }
+
+    .vertical-box {
+        font-size: 3vw;
+        border-width: 5px;
+    }
+
+    .multiple-choice-buttons input[type="radio"] {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .multiple-choice-buttons label {
+        width: 30vw;
+    }
+
+    .Aplicar, .Terminar, .Comecar {
+        font-size: 3vw;
+        padding: 1vw 2vw;
+    }
+
+    .board {
+        width: 90%;
+        max-width: none;
+        margin: 5vw auto;
+    }
+
+    .cartinha {
+        width: 60%;
+        height: 20vw;
+    }
+
+    .face {
+        text-align: 4vw;
+    }
+
+    .number {
+        left: 3vw;
+    }
+}

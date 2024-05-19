@@ -1,54 +1,46 @@
-const BOTAO_COMECAR_JOGO = "btnStartGame"
+const BOTAO_COMECAR_JOGO = "btnStartGame";
 
-//Objetos que possamos fazer
+// Objetos de personalização
 let Customizacoes = {
     Dificuldade: "Normal",
     Tempo: "Cronometro",
-}
+};
 
-// vars para o jogo que vai mudar
+// Variáveis do jogo que irão mudar
 var FoundPairsPlayer1 = 0;
 var FoundPairsPlayer2 = 0;
-var CurrentPlayer = 1;
+let player1Time = 15;
+let player2Time = 15;
+let timerInterval;
+let CurrentPlayer = 1;
 var CardListDificil = [
     'Normal', 'Fighting', 'Dark', 'Fairy', 'Water', 'Grass', 'Fire', 'Steel', 'Electric', 'Poison'
-]
+];
 
 var Rows = 4;
 var Collums = 5;
 var Lifes = 0;
 var Board = [];
-var timerInterval = null;
-var player1Time = 15;
-var player2Time = 15;
 var firstCard = null;
 var secondCard = null;
 var lockBoard = false;
-
-function PointsUpdater(Time, MatchedPairs1, MatchedPairs2, Lives, UnMatched){
-    document.getElementById('Time').textContent = Time;
-    document.getElementById('MatchedPairs1').textContent = MatchedPairs1;
-    document.getElementById('MatchedPairs2').textContent = MatchedPairs2;
-    document.getElementById('Lives').textContent = Lives;
-    document.getElementById('UnMatchedPairs').textContent = UnMatched;
-}
+var gameStarted = false; // Variável para verificar se o jogo começou
 
 window.addEventListener("load", VamoBora);
 
-function VamoBora(){
+function VamoBora() {
     Shuffle();
+    createBoard();
     addEventOptions();
-    StartGame();
 }
 
 function addEventOptions() {
-   
     document.getElementById(BOTAO_COMECAR_JOGO).addEventListener("click", StartGame);
 }
 
-function Shuffle(){
+function Shuffle() {
     CardList = CardListDificil.concat(CardListDificil); // faz com que sejam 20 cartas
-    for (let x = 0; x < CardList.length; x++){
+    for (let x = 0; x < CardList.length; x++) {
         var i = Math.floor((Math.random()) * CardList.length);
         let f = CardList[i];
         CardList[i] = CardList[x];
@@ -56,60 +48,79 @@ function Shuffle(){
     }
 }
 
-function StartGame(){
-    addEventOptions();
-    for (let r = 0; r < Rows; r++){
+function createBoard() {
+    for (let r = 0; r < Rows; r++) {
         let rows = [];
-        for(let c = 0; c < Collums; c++){
+        for (let c = 0; c < Collums; c++) {
             let CardImgName = CardList.pop();
             rows.push(CardImgName);
             let card = document.createElement('img');
             card.id = r.toString() + '|' + c.toString(); // Cria id da carta como a posição dela no tabuleiro
-            card.src = '/Media/' + CardImgName + '.jpg'
+            card.src = '/Media/backcard.jpeg';
             card.classList.add("cartinha");
             card.addEventListener('click', handleCardClick);
             document.getElementById('Jogo').append(card);
         }
         Board.push(rows);
     }
-    
-    console.log(Board);
-    setTimeout(BackofTheCards, 0);
+}
+
+function StartGame() {
+    // Reiniciar variáveis de jogo
+    FoundPairsPlayer1 = 0;
+    FoundPairsPlayer2 = 0;
+    player1Time = 15;
+    player2Time = 15;
+    CurrentPlayer = 1;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    gameStarted = true; // Indica que o jogo começou
+
+    document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
+    document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
+    document.getElementById('Time1').textContent = player1Time;
+    document.getElementById('Time2').textContent = player2Time;
+
     startPlayerTurn();
 }
 
-function BackofTheCards(){
-    for (let r = 0; r < Rows; r++) {
-        for (let c = 0; c < Collums; c++) {
-            let card = document.getElementById(r.toString() + '|' + c.toString());
-            card.src = "/Media/backcard.jpeg";
-        }
-    }
-}
-
-function startPlayerTurn(){
+function startPlayerTurn() {
     clearInterval(timerInterval);
+
     if (CurrentPlayer === 1) {
         player1Time = 15;
+        document.getElementById('Time1').textContent = player1Time;
         timerInterval = setInterval(() => {
             player1Time--;
-            document.getElementById('Time').textContent = player1Time;
+            document.getElementById('Time1').textContent = player1Time;
             if (player1Time === 0) {
-                clearInterval(timerInterval); 
-                switchPlayer(); 
+                handleTimeout();
             }
         }, 1000);
     } else {
         player2Time = 15;
+        document.getElementById('Time2').textContent = player2Time;
         timerInterval = setInterval(() => {
             player2Time--;
-            document.getElementById('Time').textContent = player2Time;
+            document.getElementById('Time2').textContent = player2Time;
             if (player2Time === 0) {
-                clearInterval(timerInterval); 
-                switchPlayer(); 
+                handleTimeout();
             }
         }, 1000);
     }
+}
+
+function handleTimeout() {
+    clearInterval(timerInterval);
+    if (firstCard) {
+        firstCard.src = '/Media/backcard.jpeg';
+    }
+    if (secondCard) {
+        secondCard.src = '/Media/backcard.jpeg';
+    }
+    resetBoard();
+    switchPlayer();
 }
 
 function switchPlayer() {
@@ -129,26 +140,28 @@ function updatePoints() {
         clearInterval(timerInterval);
         determineWinner();
     } else {
-        startPlayerTurn(); 
+        resetPlayerTime(); // Resetar o tempo do jogador antes de trocar a vez
+        switchPlayer(); // Trocar jogador após atualizar os pontos
     }
 }
 
 function determineWinner() {
     if (FoundPairsPlayer1 > FoundPairsPlayer2) {
-        alert('Player 1 wins!');
+        alert('Ganhou o Jogador 1, Parabéns!');
     } else if (FoundPairsPlayer2 > FoundPairsPlayer1) {
-        alert('Player 2 wins!');
+        alert('Ganhou o Jogador 2, Parabéns!');
     } else {
-        alert('It\'s a tie!');
+        alert('Foi um empate. Bom Jogo!');
     }
 }
 
 function handleCardClick(event) {
-    if (lockBoard) return;
+    if (!gameStarted || lockBoard) return; // Verifica se o jogo começou
     const clickedCard = event.target;
     if (clickedCard === firstCard) return;
 
-    clickedCard.src = '/Media/' + Board[clickedCard.id.split('|')[0]][clickedCard.id.split('|')[1]] + '.jpg';
+    const [r, c] = clickedCard.id.split('|');
+    clickedCard.src = '/Media/' + Board[r][c] + '.jpg';
 
     if (!firstCard) {
         firstCard = clickedCard;
@@ -163,9 +176,8 @@ function handleCardClick(event) {
         updatePoints();
     } else {
         unflipCards();
-        switchPlayer();
     }
-} 
+}
 
 function disableCards() {
     firstCard.removeEventListener('click', handleCardClick);
@@ -178,9 +190,25 @@ function unflipCards() {
         firstCard.src = '/Media/backcard.jpeg';
         secondCard.src = '/Media/backcard.jpeg';
         resetBoard();
+        resetPlayerTime(); // Resetar o tempo do jogador antes de trocar a vez
+        switchPlayer();
     }, 1500);
+}
+
+function resetPlayerTime() {
+    if (CurrentPlayer === 1) {
+        player1Time = 15;
+        document.getElementById('Time1').textContent = player1Time;
+    } else {
+        player2Time = 15;
+        document.getElementById('Time2').textContent = player2Time;
+    }
 }
 
 function resetBoard() {
     [firstCard, secondCard, lockBoard] = [null, null, false];
 }
+
+
+
+

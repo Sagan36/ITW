@@ -6,179 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/Jogo2Players.css">
+    <script src="Scripts/Jogo2Players.js" defer></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
     <audio id="background-music" autoplay loop>
         <source src="Media/Pokémon RubySapphireEmerald - Wild Pokémon Battle Theme [Enhanced].mp3" type="audio/mpeg">
     </audio>
-    <a href="Menu.html" class="top-left-button" id="Voltar">Voltar</a>
+    <a href="Numberplayers.html" class="top-left-button" id="Voltar">Voltar</a>
     <div class="jogo">
         <header><h1>Lets Battle!</h1></header>
-    <div class="board" id="Jogo">
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">1</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">2</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">3</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">4</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">5</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">6</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">7</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">8</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">9</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">10</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">11</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">12</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">13</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">14</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">15</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">16</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">17</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
+        <div class="board" id="Jogo"></div>
     
-        <div class="cartinha">
-            <div class="face front"><div class="number">18</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">19</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-
-        <div class="cartinha">
-            <div class="face front"><div class="number">20</div></div>
-            <div class="imagem_carta_fora"></div>
-        </div>
-    </div>
-    <div class="vertical-box" id="Opcoes">
-        <h2>Dificuldade</h2>
-        <form class="multiple-choice-buttons" id="Dificuldade">
-            <label>
-                <input type="radio" name="difficulty" value="Facil" id="epico">
-                Facil
-            </label>
-            <label>
-                <input type="radio" name="difficulty" value="Normal">
-                Normal
-            </label>
-            <label>
-                <input type="radio" name="difficulty" value="Hard">
-                Dificil
-            </label>
-        </form>
-        <h2>Tempo</h2>
-        <form class="multiple-choice-buttons" id="Tempo">
-            <label>
-                <input type="radio" name="time" value="Cronometro">
-                Cronometro
-            </label>
-            <label>
-                <input type="radio" name="time" value="1:00">
-                1:00
-            </label>
-            <label>
-                <input type="radio" name="time" value="2:00">
-                2:00
-            </label>
-            <label>
-                <input type="radio" name="time" value="3:00">
-                3:00
-            </label>
-        </form>
-        <button class="Aplicar"><h2>Aplicar</h2></button>
-        <button class="Terminar"><h2>Terminar</h2></button>
-    </div>
-    
-    <div class="vertical-box" id="Pontos">
-        <h2>Tempo</h2>
-        <span id="Time">0</span>
-        <h2>Vidas</h2>
-        <p id="Lives"></p>
-        <img src="/Media/Checked.png">
-        <img src="/Media/Checked.png">
-        <img src="/Media/Checked.png">
-        <img src="/Media/Unchecked.png">
-        <img src="/Media/Unchecked.png">
-        <h2>Pares Feitos</h2>
-        <p id ="MatchedPairs">4</p>
-        <h2>Pares por Encontrar</h2>
-        <p id="UnMathcedPairs">6</p>
-
-
-
-    </div>
-    <div id="Start">
-        <button class="Comecar" id="btnStartGame"><h1>Comecar</h1></button>
+        <div class="vertical-box" id="Opçoes">
+            <h2>Jogador 1</h2>
+            <div>Tempo Restante: <span id="Time1">15</span></div>
+            
+            <h2>Jogador 2</h2>
+            <div>Tempo Restante: <span id="Time2">15</span></div>
+       
         
-    </div>
-    </a>
+            <h2>Jogador 3</h2>
+            <div>Tempo Restante: <span id="Time3">15</span></div>
+            
+            <h2>Jogador 4</h2>
+            <div>Tempo Restante: <span id="Time4">15</span></div>
+        </div>
+
+        <div class="vertical-box" id="Pontos">
+            <div>Pares Feitos Jogador 1: 
+                <p><span id="MatchedPairs1">0</span></p></div>
+            <p></p>
+
+            <div>Pares Feitos Jogador 2: 
+                <p><span id="MatchedPairs2">0</span></p></div>
+            <p></p>
+
+            <div>Pares Feitos Jogador 3: 
+                <p><span id="MatchedPairs3">0</span></p></div>
+            <p></p>
+
+            <div>Pares Feitos Jogador 4: 
+                <p><span id="MatchedPairs4">0</span></p></div>
+            <p></p>
+        </div>
+        <div id="Start">
+            <button class="Comecar" id="btnStartGame"><h1>Começar</h1></button>        
+        </div>
+        
     </div>
 </body>
 </html>

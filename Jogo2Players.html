@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/Jogo2Players.css">
-    <script src="Scripts/Jogo2Players.js" ></script>
+    <script src="Scripts/Jogo2Players.js" defer></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -19,15 +19,13 @@
         <div class="board" id="Jogo"></div>
     
         <div class="vertical-box" id="Opçoes">
-
             <h2>Jogador 1</h2>
-            <div>Tempo Restante: <span id="Time">15</span></div>
+            <div>Tempo Restante: <span id="Time1">15</span></div>
             
             <h2>Jogador 2</h2>
-            <div>Tempo Restante: <span id="Time">15</span> </div>
+            <div>Tempo Restante: <span id="Time2">15</span></div>
         </div>
         
-
         <div class="vertical-box" id="Pontos">
             <div>Pares Feitos Jogador 1: 
                 <p><span id="MatchedPairs1">0</span></p></div>
@@ -42,9 +40,5 @@
         </div>
         
     </div>
-
-   
-    </a>
-    
 </body>
 </html>
