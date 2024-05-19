@@ -54,9 +54,19 @@ h1{
 }
 
 #Right{
-    grid-area: Right;
     background-image: url(/Media/Grund.png);
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 10%;
+    right: 0;
+    width: 25%;
+    height: 100vh;
+    background-color: aqua;
+    border-image: url("/Media/Frame.png") 75 round;
+    border-style: solid;
+    border-width: 10px;
 
 }
 
@@ -149,25 +159,28 @@ header{
 
 
 
-/* tabela_leaderboard */
+    /* tabela_leaderboard */
 
-.content-leaderboard {
-    background-color: #0075BE ; 
-    color: white; 
-    border: 1px solid #FFCC00; 
-    margin-top: 0;
-    text-shadow: 
-    -1px -1px 0 #000000,  
-     1px -1px 0 #000000,
-    -1px  1px 0 #000000,
-     1px  1px 0 #000000;
-}
+    .content-leaderboard {
+        background-color: #0075BE ; 
+        color: white; 
+        border: 1px solid #FFCC00; 
+        margin-top: 0;
+        text-shadow: 
+        -1px -1px 0 #000000,  
+        1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+        1px  1px 0 #000000;
+    }
 
-.content-leaderboard th,
-.content-leaderboard td {
-    padding: 20px; 
-    border: 4px solid #FFCC00; 
-}
+    .content-leaderboard th{
+        color: white;
+    }
+    .content-leaderboard td {
+        padding: 20px; 
+        color: white;
+        border: 4px solid #FFCC00; 
+    }
 
 
 /* botão para pessoal */

@@ -1,4 +1,4 @@
-<!--ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26--> 
+ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
@@ -7,6 +7,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="Styles/Login.css"> -->
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/leaderboard.css">
+    <script src="Scripts/leaderboard.js"></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -14,41 +15,22 @@
     <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
   </audio>
     <a href="Menu.html" class="top-left-button">Voltar</a>
-    <a href="1PlayerLogin.html" class="top-right-button">Estatisticas pessoais</a>
     <div class="login">
-      <!-- <div id="Imagem">
-        <img src="/Media/Login.gif" alt="Example GIF">
-      </div>  -->
+   
       <div class="login-container" id="Caixa">
         <form action="Jogo.html" method="get">
           <h2>Tabelas Mundiais</h2>
           <div class="content-leaderboard">
             <table>
-                <tr>
-                    <th>Player</th>
-                    <th>Pontos</th>
-                    <th>Genero</th>
-                    <th>Idade</th>
-                </tr>
-                <tr>
-                    <td>Ricardo</td>
-                    <td>100 pontos</td>
-                    <td>Masculino</td>
-                    <td>Adulto</td>
-                </tr>
-                <tr>
-                    <td>Dinis</td>
-                    <td>80 pontos</td>
-                    <td>Outro</td>
-                    <td>Criança</td>
-                </tr>
-                <tr>
-                    <td>Gonçalo</td>
-                    <td>60 pontos</td>
-                    <td>Outro</td>
-                    <td>Idoso</td>
-                </tr>
-            </table>
+              <thead>
+                  <tr>
+                      <th scope="col">Nome</th>
+                  </tr>
+              </thead>
+              <tbody id="statsTableBody">
+                 
+              </tbody>
+          </table>
           </div>
         </form>
       </div>
@@ -62,13 +44,8 @@
         Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo
           Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
           <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
-      </footer>
-
-  
-  
-  
-  
-  
+      </footer>  
   </div>
+  
 </body>
 </html>
