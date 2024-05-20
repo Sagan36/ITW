@@ -66,6 +66,7 @@ function createBoard() {
 }
 
 function StartGame() {
+
     // Reiniciar variáveis de jogo
     FoundPairsPlayer1 = 0;
     FoundPairsPlayer2 = 0;
@@ -140,8 +141,33 @@ function updatePoints() {
         clearInterval(timerInterval);
         determineWinner();
     } else {
-        resetPlayerTime(); // Resetar o tempo do jogador antes de trocar a vez
-        switchPlayer(); // Trocar jogador após atualizar os pontos
+        resetPlayerTime();
+        
+    }
+}
+
+function resetPlayerTime() {
+    clearInterval(timerInterval);
+    if (CurrentPlayer === 1) {
+        player1Time = 15;
+        document.getElementById('Time1').textContent = player1Time;
+        timerInterval = setInterval(() => {
+            player1Time--;
+            document.getElementById('Time1').textContent = player1Time;
+            if (player1Time === 0) {
+                handleTimeout();
+            }
+        }, 1000);
+    } else {
+        player2Time = 15;
+        document.getElementById('Time2').textContent = player2Time;
+        timerInterval = setInterval(() => {
+            player2Time--;
+            document.getElementById('Time2').textContent = player2Time;
+            if (player2Time === 0) {
+                handleTimeout();
+            }
+        }, 1000);
     }
 }
 
@@ -153,7 +179,9 @@ function determineWinner() {
     } else {
         alert('Foi um empate. Bom Jogo!');
     }
+    reset
 }
+
 
 function handleCardClick(event) {
     if (!gameStarted || lockBoard) return; // Verifica se o jogo começou
@@ -190,7 +218,7 @@ function unflipCards() {
         firstCard.src = '/Media/backcard.jpeg';
         secondCard.src = '/Media/backcard.jpeg';
         resetBoard();
-        resetPlayerTime(); // Resetar o tempo do jogador antes de trocar a vez
+        resetPlayerTime(); 
         switchPlayer();
     }, 1500);
 }
@@ -210,5 +238,25 @@ function resetBoard() {
 }
 
 
+document.getElementById('btnResetGame').addEventListener('click', resetGame);
+
+function resetGame() {
+    FoundPairsPlayer1 = 0;
+    FoundPairsPlayer2 = 0;
+    player1Time = 15;
+    player2Time = 15;
+    CurrentPlayer = 1;
+    Board = [];
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    document.getElementById('Jogo').innerHTML = '';
+    document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
+    document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
+    document.getElementById('Time1').textContent = player1Time;
+    document.getElementById('Time2').textContent = player2Time;
+    Shuffle();
+    createGrid();
+}
 
 
