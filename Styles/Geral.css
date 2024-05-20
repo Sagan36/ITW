@@ -1,6 +1,13 @@
 /* ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 */
 
-@import url("/Media/webfontkit-20240419-143343/stylesheet.css");
+/* @import url("/Media/webfontkit-20240419-143343/stylesheet.css"); */
+
+
+
+@font-face {
+    font-family: "pokemon_solidnormal";
+    src: url(Pokemon\ Solid.ttf) format("truetype");
+}
 html{
     font-family: "pokemon_solidnormal", sans-serif ;
     src: url('caminho/para/pokemon_solidnormal.woff2') format('woff2'), 
