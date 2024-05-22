@@ -38,7 +38,23 @@ a{
     cursor: pointer;
     font-size: 20px;
 }
- 
+
+/* Botao de som */
+
+.top-right-button {
+    font-family: inherit;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: #cecb15;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
 /*=============================*/
 
 @media screen and (max-width: 599px) {

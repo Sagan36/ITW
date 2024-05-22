@@ -81,12 +81,12 @@ header{
     cursor: pointer;
 }
 
-.Aplicar, .Terminar, .Comecar{
-    margin: 1vh auto;
+.Comecar{
+    margin: 0.5vh auto; /* Reduzi a margem para 0.5vh */
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
-    border-radius: 2vw;
+    border-radius: 1.5vw; /* Reduzi o border-radius para 1.5vw */
     background-color: rgba(0, 0, 0, 0.2);
     text-shadow: 
         -1px -1px 0 #000000,  
@@ -94,9 +94,10 @@ header{
         -1px  1px 0 #000000,
          1px  1px 0 #000000;
     font-family: inherit;
-    font-size: 1vw;
-    padding: 0.5vw 1vw;
+    font-size: 0.8vw; /* Reduzi o font-size para 0.8vw */
+    padding: 0.05vw 0.5vw; /* Reduzi o padding para 0.05vw 0.5vw */
 }
+
 
 .Aplicar:hover{
     background-image: url(/Media/Aplicar.gif);
