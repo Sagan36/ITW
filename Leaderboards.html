@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="Styles/leaderboard.css">
     <script src="Scripts/leaderboard.js" defer></script>
     <script src="Scripts/Som.js" defer></script>
+    <script src="Scripts/playerStats.js" defer></script>
     <title>Jogo da Memória</title>
 </head>
 <body>
@@ -14,34 +15,50 @@
     <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
   </audio>
 
-  <br>
-    <button id="botaoAudio" class="top-right-button">Desativar Áudio</button>
+  <button id="botaoAudio" class="top-right-button">Desativar Áudio</button>
 
-    <a href="Menu.html" class="top-left-button">Voltar</a>
-    <div class="login">
-   
-      <div class="login-container" id="Caixa">
-          <div class="content-leaderboard">
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Nome</th>
-                <th>Tempo</th>
-              </tr>
-            </thead>
-            <tbody id="statsTableBody">
-              <!-- Dados serão inseridos pelo JavaScript -->
-            </tbody>
-          </table>
-        </div>
+  <a href="Menu.html" class="top-left-button">Voltar</a>
+  <div class="login">
+    <div class="login-container" id="Caixa">
+      <div class="content-leaderboard" id="leaderboard">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Nome</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody id="statsTableBody">
+            <!-- Dados serão inseridos pelo JavaScript -->
+          </tbody>
+        </table>
+        <button onclick="showPlayerStats()" class="player-stats-button">Ver Estatísticas do Jogador</button>
       </div>
-      <div class="vertical-bookmark" id="Right"></div>
-      <div class="vertical-bookmark" id="Left"></div>
-      <footer>
-        Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
-        <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
-      </footer>  
+      <div class="content-player-stats" id="playerStats" style="display:none;">
+        <h2>Estatísticas do Jogador</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cartas Viradas</th>
+                    <th>Tempo Jogado</th>
+                    <th>Jogos Jogados</th>
+                </tr>
+            </thead>
+            <tbody id="playerStatsTableBody">
+                <!-- Dados serão inseridos pelo JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="showLeaderboard()" class="back-to-leaderboard-button">Voltar à Leaderboard</button>
+      </div>
     </div>
+    <div class="vertical-bookmark" id="Right"></div>
+    <div class="vertical-bookmark" id="Left"></div>
+    <footer>
+      Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+      <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+    </footer>  
+  </div>
 </body>
 </html>
