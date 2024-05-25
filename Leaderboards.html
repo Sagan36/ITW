@@ -1,13 +1,11 @@
-ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs nº62257, TP26 
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="Styles/Login.css"> -->
     <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
     <link rel="stylesheet" type="text/css" href="Styles/leaderboard.css">
-    <script src="Scripts/leaderboard.js"></script>
+    <script src="Scripts/leaderboard.js" defer></script>
     <script src="Scripts/Som.js" defer></script>
     <title>Jogo da Memória</title>
 </head>
@@ -23,34 +21,27 @@ ITW 2023/24 nº30 Dinis Garcia nº62269 Gonçalo Seguro nº62252 Ricardo Avelãs
     <div class="login">
    
       <div class="login-container" id="Caixa">
-        <form action="Jogo.html" method="get">
-          <h2>Tabelas Mundiais</h2>
           <div class="content-leaderboard">
-            <table>
-              <thead>
-                  <tr>
-                      <th scope="col">Nome</th>
-                  </tr>
-              </thead>
-              <tbody id="statsTableBody">
-                 
-              </tbody>
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Nome</th>
+                <th>Tempo</th>
+              </tr>
+            </thead>
+            <tbody id="statsTableBody">
+              <!-- Dados serão inseridos pelo JavaScript -->
+            </tbody>
           </table>
-          </div>
-        </form>
+        </div>
       </div>
-      <div class="vertical-bookmark" id="Right">
-        
-      </div>
-      <div class="vertical-bookmark" id="Left">
-        
-      </div>
+      <div class="vertical-bookmark" id="Right"></div>
+      <div class="vertical-bookmark" id="Left"></div>
       <footer>
-        Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo
-          Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
-          <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+        Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+        <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
       </footer>  
-  </div>
-  
+    </div>
 </body>
 </html>

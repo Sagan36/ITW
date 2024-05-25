@@ -222,6 +222,10 @@ function initializeTimer() {
         timeRemaining = 180;
     }else if(Customizaçoes.Tempo === "Cronometro"){
 
+
+    
+
+
     }
     // Update the timer display immediately`
     updateTimerDisplay();
