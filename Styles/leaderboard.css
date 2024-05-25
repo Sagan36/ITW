@@ -11,6 +11,7 @@
 body{
     text-align: center;
     background-size: auto;
+
 }
 
 h2{
@@ -35,14 +36,14 @@ h1{
 /*Grid */
 .login{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 40% 20% 40;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
-    "Header"
-    "Left"
-    "Caixa"
-    "Right"
-    "Footer"
+    "Header Header Header"
+    "Left Caixa Right" 
+    "Left Caixa Right"
+    "Left Caixa Right"
+    "Footer Footer Footer"
     ;
     overflow: auto;
     text-align: center;
@@ -66,6 +67,7 @@ h1{
     border-image: url("/Media/Frame.png") 75 round;
     border-style: solid;
     border-width: 10px;
+
 }
 
 
@@ -161,21 +163,27 @@ header{
          1px -1px 0 #000000,
         -1px  1px 0 #000000,
          1px  1px 0 #000000;
-}
 
+}
 .footer-display a {
     color: rgb(33, 32, 141);
-    text-shadow: none;
+    text-shadow: none
+
 }
+
+
+
+
+
 
 /* Styles for leaderboard */
 .content-leaderboard {
     width: 60%;
     margin: 20px auto;
-    background-color: white; /* Set background color to white */
+    background-color: transparent;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    background-color: transparent;
 }
 
 table {
@@ -183,6 +191,7 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     background-color: transparent;
+
 }
 
 table th, table td {
@@ -205,7 +214,17 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 599px) {
+    
     .login {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto auto;
@@ -219,12 +238,16 @@ table tr:hover {
         grid-gap: 10px;
     }
 
+
     .login > * {
         margin: 0;
         padding: 0;
     }
 
+  
     #Caixa {
         margin-top: 0;
     }
 }
+
+
