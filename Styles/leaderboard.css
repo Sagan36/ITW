@@ -42,7 +42,7 @@ h1 {
 }
 
 #Right {
-    background-image: url(/Media/Grund.png);
+    background-image: url(/Media/white.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -58,7 +58,7 @@ h1 {
 }
 
 #Left {
-    background-image: url("/Media/Blastoise.jpg");
+    background-image: url(/Media/black\ kyurem.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
