@@ -1,35 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Exemplo de dados para a leaderboard
+    const leaderboardData = [
+        { rank: 1, name: "Alex Mike", time: "05:15" },
+        { rank: 2, name: "Johnson", time: "04:45" },
+        { rank: 3, name: "Charles John", time: "06:20" },
+        { rank: 4, name: "Scarlett Angela", time: "07:05" },
+        { rank: 5, name: "Posey", time: "08:30" }
+    ];
+
     const statsTableBody = document.getElementById('statsTableBody');
-
-    // Função para carregar e exibir nomes do Local Storage
-    function loadNames() {
-        // Limpar as linhas existentes da tabela
-        statsTableBody.innerHTML = '';
-
-        // Obter todas as chaves do Local Storage e ordená-las alfabeticamente
-        let keys = [];
-        for (let i = 0; i < localStorage.length; i++) {
-            keys.push(localStorage.key(i));
-        }
-        keys.sort();
-
-        // Adicionar cada chave como uma linha na tabela, exceto 'currentLogin'
-        keys.forEach(key => {
-            if (key !== 'currentLogin') {
-                addRowToTable(key);
-            }
-        });
-    }
-
-    // Função para adicionar uma linha à tabela
-    function addRowToTable(name) {
+    leaderboardData.forEach(data => {
         const row = document.createElement('tr');
-        const nameCell = document.createElement('td');
-        nameCell.textContent = name;
-        row.appendChild(nameCell);
+        row.innerHTML = `<td>${data.rank}</td><td>${data.name}</td><td>${data.time}</td>`;
         statsTableBody.appendChild(row);
-    }
-
-    // Carregar os nomes quando a página carregar
-    loadNames();
+    });
 });
+
+function showPlayerStats() {
+    document.getElementById('leaderboard').style.display = 'none';
+    document.getElementById('playerStats').style.display = 'block';
+}
+
+function showLeaderboard() {
+    document.getElementById('leaderboard').style.display = 'block';
+    document.getElementById('playerStats').style.display = 'none';
+}
