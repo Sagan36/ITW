@@ -1,3 +1,5 @@
+
+
 const USERNAME = 'usernameLogin';
 const PASSWORD = 'passwordLogin';
 const AGE = 'age';
@@ -22,7 +24,7 @@ function Login(event){
     let LoginPassword = document.getElementById(PASSWORD).value;
 
     let LocalStorageClientInfo = JSON.parse(localStorage.getItem(LoginUsername))
-
+    let nextpage = JSON.parse(localStorage.getItem('nextpage'))
     console.log(LocalStorageClientInfo)
 
     if (localStorage.getItem(LoginUsername) == null){
@@ -33,7 +35,10 @@ function Login(event){
         let CurrentLogin = new CurrentUserInfo(LocalStorageClientInfo)
         console.log('Login bem sucedido.')
         localStorage.setItem("currentLogin", JSON.stringify(CurrentLogin));  //Voltamos a por na forma de string para utilizar mais tarde
+        console.log(nextpage)
+
         window.location.href = "Jogo.html";
+        
 
     }else{
         alert("Utilizador ou a password estão errados.")
@@ -41,6 +46,7 @@ function Login(event){
     }
         
 }
+
 
 
 

@@ -40,3 +40,4 @@ function register(event) {
         window.location.href = "1PlayerLogin.html";
     }
 }
+
