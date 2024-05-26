@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/Login.css">
+    <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
+    <script src="Scripts/Som.js" defer></script>
+    <script src="Scripts/Register2Players.js" defer></script>
+    <title>Jogo da Memória</title>
+</head>
+<body>
+  <audio id="background-music" autoplay loop>
+    <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
+  </audio>
+
+  <br>
+  <button id="botaoAudio" class="top-right-button">Desativar Áudio</button>
+  <a href="2PlayerLogin.html" class="top-left-button">Voltar</a>
+  
+  <header><h2>Regista-te para Jogar</h2></header>
+  <div class="login">
+    <div id="Imagem">
+      <img src="/Media/Login.gif" alt="Example GIF">
+    </div> 
+    <div class="login-container" id="Caixa">
+      <h2>Registo</h2>
+      <form id="registerFormPlayer1">
+        <input id="PLAYER1_USERNAME" type="text" name="player1username" placeholder="Player 1 Username" required>
+        <input id="PLAYER1_PASSWORD" type="password" name="player1password" placeholder="Player 1 Password" required>
+        <input id="CONFIRM_PASSWORD1" type="password" name="ConfirmPassword1" placeholder="Confirm your password" required>
+        <select name="faixa etaria" required id="PLAYER1_AGE">
+          <option value="" disabled selected>Age group</option>
+          <option value="criança">criança(0-12)</option>
+          <option value="adolescente">adolescente(13-17)</option>
+          <option value="adulto">adulto(18-64)</option>
+          <option value="idoso">idoso(65+anos)</option>
+        </select>
+        <select name="gender" required id="PLAYER1_GENDER">
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+          <option value="other">Outro</option>
+        </select>
+        <button type="submit" id="btnRegisterPlayer1">Register Player 1</button>
+      </form>
+
+      <div id="registerPlayer2" style="display: none;">
+        <h2>Registo Player 2</h2>
+        <form id="registerFormPlayer2">
+          <input id="PLAYER2_USERNAME" type="text" name="player2username" placeholder="Player 2 Username" required>
+          <input id="PLAYER2_PASSWORD" type="password" name="player2password" placeholder="Player 2 Password" required>
+          <input id="CONFIRM_PASSWORD2" type="password" name="ConfirmPassword2" placeholder="Confirm your password" required>
+          <select name="faixa etaria" required id="PLAYER2_AGE">
+            <option value="" disabled selected>Age group</option>
+            <option value="criança">criança(0-12)</option>
+            <option value="adolescente">adolescente(13-17)</option>
+            <option value="adulto">adulto(18-64)</option>
+            <option value="idoso">idoso(65+anos)</option>
+          </select>
+          <select name="gender" required id="PLAYER2_GENDER">
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+            <option value="other">Outro</option>
+          </select>
+          <button type="submit" id="btnRegisterPlayer2">Register Player 2</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="vertical-bookmark" id="Right"></div>
+    <div class="vertical-bookmark" id="Left"></div>
+    <footer>
+      Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+      <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+    </footer>
+  </div>
+</body>
+</html>

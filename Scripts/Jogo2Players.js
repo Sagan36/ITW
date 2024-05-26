@@ -179,7 +179,7 @@ function determineWinner() {
     } else {
         alert('Foi um empate. Bom Jogo!');
     }
-    reset
+    resetGame()
 }
 
 
@@ -241,6 +241,7 @@ function resetBoard() {
 document.getElementById('btnResetGame').addEventListener('click', resetGame);
 
 function resetGame() {
+    clearInterval(timerInterval); 
     FoundPairsPlayer1 = 0;
     FoundPairsPlayer2 = 0;
     player1Time = 15;
@@ -250,13 +251,14 @@ function resetGame() {
     firstCard = null;
     secondCard = null;
     lockBoard = false;
+    gameStarted = false; 
     document.getElementById('Jogo').innerHTML = '';
     document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
     document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
     document.getElementById('Time1').textContent = player1Time;
     document.getElementById('Time2').textContent = player2Time;
     Shuffle();
-    createGrid();
+    createBoard();
 }
 
 
