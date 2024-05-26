@@ -1,0 +1,37 @@
+Contribuições:
+
+====================================================================
+Dinis Garcia nº62269
+
+jogo.jv
+register.js
+LeaderBoards.js
+1PlayerLogin.js
+====================================================================
+Gonçalo Seguro nº62252
+
+Som.js
+jogo2Players.js
+jogo3Players.js
+jogo4Players.js
+====================================================================
+Ricardo Avelas nº62257
+
+LeaderBoards.css
+LeaderBoards.jv
+1PlayerLogin.js
+LeaderBoards.html
+
+
+Cada elemento contribuiu igualmente na prática do Projeto.
+
+Tivemos em atenção todas as funcionalidades adicionais do jogo mencionadas no enunciado do Projeto.
+Cumprimos todos os requisitos essenciais do jogo.
+
+Notas:
+O documento "Pokemon Solid.tff" é uma fonte que na entrega anterior estava a tornar o site lento, 
+sendo esse problema resolvido
+
+Neste LEIAME, na parte das contribuições, referimo-nos apenas ao JavaScript e algumas alterações 
+que achamos necessárias no HTML e CSS.
+

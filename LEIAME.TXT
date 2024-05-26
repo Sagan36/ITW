@@ -48,7 +48,7 @@ numero de players escolhido.
 Como um botao de ajuste de volume(que nao estragasse o tema do site),
 é necessario JavaScript este ainda não existe.
 
-Epico kkoko
+
 
 
 
