@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/Login.css">
+    <link rel="stylesheet" type="text/css" href="Styles/Geral.css">
+    <script src="Scripts/Som.js" defer></script>
+    <script src="Scripts/2PlayersLogin.js" defer></script>
+    <title>Jogo da Memória</title>
+</head>
+<body>
+    <audio id="background-music" autoplay loop>
+        <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
+    </audio>
+
+    <a href="Numberplayers.html" class="top-left-button">Voltar</a>
+
+    <br>
+    <button id="botaoAudio" class="top-right-button"></button>
+
+    <header><h2>Façam Login para Jogar</h2></header>
+    <div class="login">
+        <div id="Imagem">
+            <img src="/Media/Login.gif" alt="Example GIF">
+        </div>
+        <div class="login-container" id="Caixa">
+            <h2>Login</h2>
+            <form id="loginform">
+                <input type="text" name="player1username" placeholder="Player 1 Username" id="player1username" required>
+                <input type="password" name="player1password" placeholder="Player 1 Password" id="player1password" required>
+                <input type="text" name="player2username" placeholder="Player 2 Username" id="player2username" required>
+                <input type="password" name="player2password" placeholder="Player 2 Password" id="player2password" required>
+                <button type="submit">Login</button>
+            </form>
+            <a href="Register2Players.html">Se ainda não estiverem registados, Registem-se!</a>
+        </div>
+        <div class="vertical-bookmark" id="Right"></div>
+        <div class="vertical-bookmark" id="Left"></div>
+        <footer>
+          Feito por <a href="AboutUs.html">Dinis Garcia nº62269</a>, <a href="AboutUs.html"> Gonçalo Seguro nº62252</a> e <a href="AboutUs.html">Ricardo Avelãs nº62257</a>.
+          <p><h2><a href="https://ciencias.ulisboa.pt/">@Fcul</a></h2></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -37,7 +37,6 @@ function register(event) {
         let userDataJSON = JSON.stringify(user);
         localStorage.setItem(user.username, userDataJSON);
         console.log("User added to local storage.");
-        // Redirect to login page after successful registration
         window.location.href = "1PlayerLogin.html";
     }
 }
