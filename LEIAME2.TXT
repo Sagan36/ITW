@@ -1,21 +1,21 @@
 Contribuições:
 
 ====================================================================
-Dinis Garcia nº62269
+Dinis Garcia n.º62269
 
 jogo.jv
 register.js
 LeaderBoards.js
 1PlayerLogin.js
 ====================================================================
-Gonçalo Seguro nº62252
+Gonçalo Seguro n.º62252
 
 Som.js
 jogo2Players.js
 jogo3Players.js
 jogo4Players.js
 ====================================================================
-Ricardo Avelas nº62257
+Ricardo Avelãs n.º62257
 
 LeaderBoards.css
 LeaderBoards.jv
@@ -23,15 +23,19 @@ LeaderBoards.jv
 LeaderBoards.html
 
 
-Cada elemento contribuiu igualmente na prática do Projeto.
+Cada elemento contribuiu igualmente, na prática do Projeto.
 
 Tivemos em atenção todas as funcionalidades adicionais do jogo mencionadas no enunciado do Projeto.
 Cumprimos todos os requisitos essenciais do jogo.
 
 Notas:
-O documento "Pokemon Solid.tff" é uma fonte que na entrega anterior estava a tornar o site lento, 
+O documento "Pokemon Solid.tff" é uma fonte que na entrega anterior tornava o site lento, 
 sendo esse problema resolvido
 
 Neste LEIAME, na parte das contribuições, referimo-nos apenas ao JavaScript e algumas alterações 
 que achamos necessárias no HTML e CSS.
 
+Os stats pessoais não estão a funcionar como queríamos e relativamente ao login do multiplayer não 
+conseguimos meter os avatares como pedido sendo que então optamos por fazer o login usando o 
+nome do jogador e a sua password, sendo também que ambos têm de se registar primeiro como no login
+do single player 
