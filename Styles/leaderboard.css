@@ -201,7 +201,7 @@ table tr:hover {
 
 
 
-/* Estilo para botões de dificuldade */
+
 .difficulty-button {
     background-color: #007bff;
     border: none;
@@ -214,12 +214,11 @@ table tr:hover {
     margin: 5px;
 }
 
-/* Esconder todas as tabelas de dificuldade inicialmente */
+
 .difficulty-table {
     display: none;
 }
 
-/* Mostrar apenas a tabela ativa */
 .difficulty-table.active {
     display: table;
 }
