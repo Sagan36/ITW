@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load and display the saved leaderboard data on page load
     loadBoard();
-
-    // Initialize the current game info for testing
-    
-    // Update the board with new user data if any
     VamoBora();
 });
 
@@ -14,6 +9,7 @@ function VamoBora() {
 
 function UpdatesBoardNEWUSER() {
     const game = JSON.parse(localStorage.getItem('currentGameInfo'));
+    localStorage.removeItem('currentGameInfo')
     if (!game) return;
 
     let statsTableBodyId;
@@ -82,7 +78,7 @@ function getTableData(tableBodyId) {
 
 function populateTable(tableBodyId, data) {
     const tableBody = document.getElementById(tableBodyId);
-    tableBody.innerHTML = ''; // Clear existing rows
+    tableBody.innerHTML = ''; 
 
     data.forEach((item, index) => {
         const row = document.createElement('tr');
@@ -93,7 +89,7 @@ function populateTable(tableBodyId, data) {
 
 function updateTable(tableBodyId, data) {
     const tableBody = document.getElementById(tableBodyId);
-    tableBody.innerHTML = ''; // Clear existing rows
+    tableBody.innerHTML = ''; 
 
     data.forEach((item, index) => {
         const row = document.createElement('tr');
@@ -106,7 +102,7 @@ function parseTime(timeStr) {
     const parts = timeStr.split(':');
     const minutes = parseInt(parts[0], 10);
     const seconds = parseInt(parts[1], 10);
-    return minutes * 60 + seconds; // Return total time in seconds
+    return minutes * 60 + seconds;
 }
 
 function addRow() {
@@ -119,7 +115,7 @@ function addRow() {
     UpdatesBoardNEWUSER();
 }
 
-// Show or hide player stats
+
 function showPlayerStats() {
     document.getElementById('leaderboard').style.display = 'none';
     document.getElementById('playerStats').style.display = 'block';
@@ -130,7 +126,7 @@ function showLeaderboard() {
     document.getElementById('playerStats').style.display = 'none';
 }
 
-// Show or hide tables based on difficulty
+
 function showDifficultyTable(difficulty) {
     const difficulties = ['easy', 'medium', 'hard'];
     difficulties.forEach(level => {
@@ -141,19 +137,4 @@ function showDifficultyTable(difficulty) {
 
 function changeDifficulty(difficulty) {
     showDifficultyTable(difficulty);
-}
-// Personal statistics functions
-
-function SavePersonalStats() {
-    const personalStatsData = {
-        // Your personal statistics data structure here
-    };
-    localStorage.setItem('currentPersonalStats', JSON.stringify(personalStatsData));
-}
-
-function loadPersonalStats() {
-    const personalStatsData = JSON.parse(localStorage.getItem('CurrentPersonalStats'));
-    if (!personalStatsData) return;
-
-    // Populate your UI with personal statistics data
 }

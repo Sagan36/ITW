@@ -193,6 +193,7 @@ console.log(x)
     }else if (document.getElementById(PARES_POR_ENCONTRAR).textContent == 0){
         alert("Parabéns ganhaste!!")
         EndGame()
+        window.location.href = 'Leaderboards.html'
         
     }
 FirstCard = null;
@@ -331,7 +332,6 @@ function EndGame(){
         let currentUser = CURRENT_USER.username;
         let gameInfo = new PersonalStats(currentUser, timeRemaining, MatchedPairs);
         localStorage.setItem('CurrentPersonalStats',JSON.stringify(gameInfo))
-        window.location.href = 'Leaderboards.html'
     }
     
 
