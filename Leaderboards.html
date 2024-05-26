@@ -12,7 +12,7 @@
 </head>
 <body>
   <audio id="background-music" autoplay loop>
-    <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald  soundtrack 30min.mp3" type="audio/mpeg">
+    <source src="Media/Littleroot Town-Pokémon RubySapphireEmerald soundtrack 30min.mp3" type="audio/mpeg">
   </audio>
 
   <button id="botaoAudio" class="top-right-button">Desativar Áudio</button>
@@ -21,7 +21,10 @@
   <div class="login">
     <div class="login-container" id="Caixa">
       <div class="content-leaderboard" id="leaderboard">
-        <table>
+        <button onclick="changeDifficulty('easy')" class="difficulty-button">Fácil</button>
+        <button onclick="changeDifficulty('medium')" class="difficulty-button">Médio</button>
+        <button onclick="changeDifficulty('hard')" class="difficulty-button">Difícil</button>
+        <table id="easyTable" class="difficulty-table">
           <thead>
             <tr>
               <th>Rank</th>
@@ -29,7 +32,31 @@
               <th>Tempo</th>
             </tr>
           </thead>
-          <tbody id="statsTableBody">
+          <tbody id="easyTableBody">
+            <!-- Dados serão inseridos pelo JavaScript -->
+          </tbody>
+        </table>
+        <table id="mediumTable" class="difficulty-table" style="display:none;">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Nome</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody id="mediumTableBody">
+            <!-- Dados serão inseridos pelo JavaScript -->
+          </tbody>
+        </table>
+        <table id="hardTable" class="difficulty-table" style="display:none;">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Nome</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody id="hardTableBody">
             <!-- Dados serão inseridos pelo JavaScript -->
           </tbody>
         </table>
@@ -51,7 +78,6 @@
             </tbody>
             <button onclick="showLeaderboard()" class="back-to-leaderboard-button">Voltar à Leaderboard</button>
         </table>
-       
       </div>
     </div>
     <div class="vertical-bookmark" id="Right"></div>

@@ -25,3 +25,32 @@ function showLeaderboard() {
     document.getElementById('leaderboard').style.display = 'block';
     document.getElementById('playerStats').style.display = 'none';
 }
+
+// Scripts/leaderboard.js
+document.addEventListener('DOMContentLoaded', (event) => {
+    showDifficultyTable('easy'); // Show easy table by default
+});
+
+function showDifficultyTable(difficulty) {
+    const difficulties = ['easy', 'medium', 'hard'];
+    difficulties.forEach(level => {
+        document.getElementById(level + 'Table').style.display = 'none';
+    });
+    document.getElementById(difficulty + 'Table').style.display = 'table';
+}
+
+function changeDifficulty(difficulty) {
+    showDifficultyTable(difficulty);
+}
+
+// Funções para mostrar estatísticas do jogador e a leaderboard
+function showPlayerStats() {
+    document.getElementById('leaderboard').style.display = 'none';
+    document.getElementById('playerStats').style.display = 'block';
+}
+
+function showLeaderboard() {
+    document.getElementById('leaderboard').style.display = 'block';
+    document.getElementById('playerStats').style.display = 'none';
+}
+
