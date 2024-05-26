@@ -23,6 +23,12 @@ function CurrentGameInfo(user, difficulty, time){
     this.time = time
 }
 
+function PersonalStats(user,TotalTime, MatchedPairs){
+    this.user = user
+    this.TotalTime = TotalTime
+    this.MathMLElement = MatchedPairs
+}
+
 
 // vars para o jogo que vai mudar
 
@@ -187,6 +193,7 @@ console.log(x)
     }else if (document.getElementById(PARES_POR_ENCONTRAR).textContent == 0){
         alert("Parabéns ganhaste!!")
         EndGame()
+        
     }
 FirstCard = null;
 SecondCard = null;
@@ -293,6 +300,7 @@ function UpdatesBoard(){
 
 function EndGame(){
         let timeRemaining = document.getElementById('Time').textContent;
+        let MatchedPairs = document.getElementById(PARES_ENCONTRADOS).textContent;
         clearInterval(timerInterval);
         document.getElementById('Time').textContent = "00:00";
         
@@ -312,14 +320,20 @@ function EndGame(){
         BackofTheCards()
 
         console.log("Game has been reset");
+        
         if(Customizaçoes.Tempo === "Cronometro"){
         let currentUser = CURRENT_USER.username;
         let difficulty = Customizaçoes.Dificuldade;
     
         let gameInfo = new CurrentGameInfo(currentUser, difficulty, timeRemaining);
         localStorage.setItem('currentGameInfo', JSON.stringify(gameInfo));
+        }
+        let currentUser = CURRENT_USER.username;
+        let gameInfo = new PersonalStats(currentUser, timeRemaining, MatchedPairs);
+        localStorage.setItem('CurrentPersonalStats',JSON.stringify(gameInfo))
+        window.location.href = 'Leaderboards.html'
     }
-    }
+    
 
 function EndGameBTN(){
     EndGame()
