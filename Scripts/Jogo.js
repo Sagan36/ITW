@@ -4,10 +4,11 @@
 
 const BOTAO_COMECAR_JOGO = "btnStartGame"
 const BOTAO_APLICAR = "btnCustoms"
-const BOTAO_TERMINAR = "btnFinnish"
+const BOTAO_TERMINAR = "btnEnd"
 const PARES_POR_ENCONTRAR = "UnMatchedPairs"
 const PARES_ENCONTRADOS = "MatchedPairs"
-
+let CURRENT_USER = JSON.parse(localStorage.getItem('currentLogin'))
+console.log(CURRENT_USER.username)
 //Objetos que possamos fazer
 let Customizaçoes = {
 
@@ -15,6 +16,13 @@ let Customizaçoes = {
     Tempo: "Cronometro",
 
 }
+
+function CurrentGameInfo(user, difficulty, time){
+    this.user = user
+    this.difficulty = difficulty
+    this.time = time
+}
+
 
 // vars para o jogo que vai mudar
 
@@ -52,7 +60,6 @@ var CardListFacil= [
 
 ]
 
-var CurrentCardListDifficulty;
 
 var Lifes = 0
 var Board = []
@@ -62,21 +69,22 @@ window.addEventListener("load", VamoBora);
 function VamoBora(){
     LivesMaker()
     addEventOptions()
-    MakesBoard()
-    
+    UpdatesBoard()
 }
 
 function addEventOptions() {
     document.getElementById("Dificuldade").addEventListener('change', DifficultyOptions);
     document.getElementById("Tempo").addEventListener('change', TimeOptions);
-    document.getElementById(BOTAO_COMECAR_JOGO).addEventListener("click", StartGame)
-    document.getElementById(BOTAO_APLICAR).addEventListener("click", CustomizationsBTN)
+    document.getElementById(BOTAO_COMECAR_JOGO).addEventListener("click", StartGamebtn);
+    document.getElementById(BOTAO_APLICAR).addEventListener("click", CustomizationsBTN);
+    document.getElementById(BOTAO_TERMINAR).addEventListener("click", EndGameBTN);
 }
 
 
 //-------------------------------------------------------------------FUNCOES QUE FAZEM O JOGO--------------------------------------------------------------------------
 function Shuffle(){
     DifficultyChecker()
+    console.log(CurrentCardListDifficulty)
     CardList = CurrentCardListDifficulty.concat(CurrentCardListDifficulty)// faz com que sejam 20 cartas
     for (let x = 0; x < CardList.length; x++){
 
@@ -86,12 +94,11 @@ function Shuffle(){
         CardList[x] = f;
     }
 }
-
+var Board = []
 var Rows = 0
 var Collums = 0
 function MakesBoard(){
-UpdatesBoard()
-Shuffle();
+    
     for (let r = 0; r < Rows; r++){
         let rows = []
         for(let c = 0; c < Collums; c++){
@@ -102,13 +109,12 @@ Shuffle();
             card.src = '/Media/' + CardImgName + '.jpg'
             card.classList.add("cartinha")
             document.getElementById('Jogo').append(card); 
-            console.log(card)
             
         }
         Board.push(rows)
     }
+    setTimeout(BackofTheCards,0)
 document.getElementById(PARES_POR_ENCONTRAR).textContent = (Rows * Collums) / 2    
-setTimeout(BackofTheCards,0)
 }
 
 function StartGame(){
@@ -119,8 +125,6 @@ function StartGame(){
             card.addEventListener("click", ClickableCards);
         }
     }
-
-        setTimeout(BackofTheCards, 0)
 }
 
 function BackofTheCards(){
@@ -128,8 +132,7 @@ function BackofTheCards(){
     for (let r = 0; r < Rows; r++) {
         for (let c = 0; c < Collums; c++) {
         let card = document.getElementById(r.toString() + '|' + c.toString())
-        card.src = "/Media/backcard.jpeg"
-    
+        card.src = "/Media/backcard.jpeg" 
         }
     }
 }
@@ -138,18 +141,19 @@ var FirstCard;
 var SecondCard;
 
 function ClickableCards(){
-    
+    console.log(CurrentCardListDifficulty)
     if(this.src.includes("backcard")){//vemos se a carta no momento que aparece na board está virada para cima ou para baixo
         if(!FirstCard){
             FirstCard = this
-
+            console.log(FirstCard)
             let position = FirstCard.id.split("|");
-            let x = parseInt(positimion[0])
+            let x = parseInt(position[0])
             let y = parseInt(position[1])
 
             FirstCard.src = "/Media/" + Board[x][y] + ".jpg"
         }else if(!SecondCard && this != FirstCard){
             SecondCard = this
+            console.log(SecondCard)
             
             let position = SecondCard.id.split("|");
             let x = parseInt(position[0])
@@ -158,7 +162,6 @@ function ClickableCards(){
             SecondCard.src = "/Media/" + Board[x][y] + ".jpg"
             setTimeout(CardsChecker, 500)  
         }
-
     } 
 }
 
@@ -178,15 +181,16 @@ console.log(x)
     }
 
 
-if (x === 5 ){
-    alert("Gastaste todas as tuas vidas! Boa sorte para a proxima!")
-}else if(document.getElementById(PARES_POR_ENCONTRAR == 0)){
-    alert("Parabéns ganhaste!!")
-}
+    if (x === 5){
+        alert("Gastaste todas as tuas vidas! Boa sorte para a proxima!")
+        EndGame()
+    }else if (document.getElementById(PARES_POR_ENCONTRAR).textContent == 0){
+        alert("Parabéns ganhaste!!")
+        EndGame()
+    }
 FirstCard = null;
 SecondCard = null;
 
-    
 }
 
 function LivesMaker(){
@@ -221,27 +225,30 @@ function initializeTimer() {
     } else if (Customizaçoes.Tempo === "3:00") {
         timeRemaining = 180;
     }else if(Customizaçoes.Tempo === "Cronometro"){
-
-
-    
-
+        timeRemaining = 0;
 
     }
     // Update the timer display immediately`
     updateTimerDisplay();
     timerInterval = setInterval(() => {
-        timeRemaining--;
-        if (timeRemaining <= 0) {
-            clearInterval(timerInterval);
-            alert("Tempo Acabou.");
+        if (Customizaçoes.Tempo !== "Cronometro") {
+            timeRemaining--;
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                alert("Tempo Acabou.");
+                EndGame()
+            }
+        } else {
+            timeRemaining++;
         }
+        
         updateTimerDisplay();
     }, 1000);
 }
 
 function updateTimerDisplay() {
     document.getElementById('Time').textContent = formatTime(timeRemaining);
-    console.log(formatTime(timeRemaining));
+    console.log(formatTime(timeRemaining)) 
 }
 
 function formatTime(timeInSeconds) {
@@ -253,7 +260,7 @@ function formatTime(timeInSeconds) {
 
 function DifficultyOptions(event) {
     Customizaçoes.Dificuldade = event.target.value;
-    console.log('Selected Difficulty:', Customizaçoes.Dificuldade);
+    console.log('Selected Difficulty:', Customizaçoes.Dificuldade); 
 }
 
 function DifficultyChecker(){
@@ -273,18 +280,56 @@ function DifficultyChecker(){
 }
 
 function UpdatesBoard(){
-    
+    Shuffle()
     document.getElementById('Jogo').innerHTML = ''
-    DifficultyChecker()
     const jogoElement = document.getElementById('Jogo'); //Atualiza a grid no css
     jogoElement.style.gridTemplateRows = `repeat(${Rows}, 1fr)`;
     jogoElement.style.gridTemplateColumns = `repeat(${Collums}, 1fr)`;
-
+    MakesBoard()
+    console.log(Board)
+    
+    
 }
 
+function EndGame(){
+        let timeRemaining = document.getElementById('Time').textContent;
+        clearInterval(timerInterval);
+        document.getElementById('Time').textContent = "00:00";
+        
+        document.getElementById('lives').innerHTML = '';
+        
+        Board = [];
+        
+        document.getElementById(PARES_ENCONTRADOS).textContent = '0';
+        document.getElementById(PARES_POR_ENCONTRAR).textContent = '0';
 
+        FirstCard = null;
+        SecondCard = null;
+        x = 0;
+        
+        LivesMaker()
+        addEventOptions()
+        BackofTheCards()
 
+        console.log("Game has been reset");
+        if(Customizaçoes.Tempo === "Cronometro"){
+        let currentUser = CURRENT_USER.username;
+        let difficulty = Customizaçoes.Dificuldade;
+    
+        let gameInfo = new CurrentGameInfo(currentUser, difficulty, timeRemaining);
+        localStorage.setItem('currentGameInfo', JSON.stringify(gameInfo));
+    }
+    }
+
+function EndGameBTN(){
+    EndGame()
+}
 function CustomizationsBTN(){
+    Board = []
+    UpdatesBoard()
+}
 
-    MakesBoard()
+function StartGamebtn(){
+    console.log(Board)
+    StartGame()
 }
