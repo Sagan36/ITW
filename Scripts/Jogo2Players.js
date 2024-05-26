@@ -24,7 +24,7 @@ var Board = [];
 var firstCard = null;
 var secondCard = null;
 var lockBoard = false;
-var gameStarted = false; // Variável para verificar se o jogo começou
+var gameStarted = false; 
 
 window.addEventListener("load", VamoBora);
 
@@ -76,7 +76,7 @@ function StartGame() {
     firstCard = null;
     secondCard = null;
     lockBoard = false;
-    gameStarted = true; // Indica que o jogo começou
+    gameStarted = true; 
 
     document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
     document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;

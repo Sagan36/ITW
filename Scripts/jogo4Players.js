@@ -10,14 +10,17 @@ let Customizacoes = {
 var FoundPairsPlayer1 = 0;
 var FoundPairsPlayer2 = 0;
 var FoundPairsPlayer3 = 0;
-var TotalFlippedCardsPlayer1 = 0;
-var TotalFlippedCardsPlayer2 = 0;
-var TotalFlippedCardsPlayer3 = 0;
+var FoundPairsPlayer4 = 0;
 let player1Time = 15;
 let player2Time = 15;
 let player3Time = 15;
+let player4Time = 15;
 let timerInterval;
 let CurrentPlayer = 1;
+let TotalFlippedCardsPlayer1 = 0;
+let TotalFlippedCardsPlayer2 = 0;
+let TotalFlippedCardsPlayer3 = 0;
+let TotalFlippedCardsPlayer4 = 0;
 var CardListDificil = [
     'Normal', 'Fighting', 'Dark', 'Fairy', 'Water', 'Grass', 'Fire', 'Steel', 'Electric', 'Poison'
 ];
@@ -29,7 +32,7 @@ var Board = [];
 var firstCard = null;
 var secondCard = null;
 var lockBoard = false;
-var gameStarted = false; 
+var gameStarted = false;
 
 window.addEventListener("load", VamoBora);
 
@@ -44,7 +47,7 @@ function addEventOptions() {
 }
 
 function Shuffle() {
-    CardList = CardListDificil.concat(CardListDificil); // faz com que sejam 20 cartas
+    CardList = CardListDificil.concat(CardListDificil);
     for (let x = 0; x < CardList.length; x++) {
         var i = Math.floor((Math.random()) * CardList.length);
         let f = CardList[i];
@@ -60,7 +63,7 @@ function createBoard() {
             let CardImgName = CardList.pop();
             rows.push(CardImgName);
             let card = document.createElement('img');
-            card.id = r.toString() + '|' + c.toString(); // Cria id da carta como a posição dela no tabuleiro
+            card.id = r.toString() + '|' + c.toString();
             card.src = '/Media/backcard.jpeg';
             card.classList.add("cartinha");
             card.addEventListener('click', handleCardClick);
@@ -71,26 +74,28 @@ function createBoard() {
 }
 
 function StartGame() {
-
-    // Reiniciar variáveis de jogo
     FoundPairsPlayer1 = 0;
     FoundPairsPlayer2 = 0;
     FoundPairsPlayer3 = 0;
+    FoundPairsPlayer4 = 0;
     player1Time = 15;
     player2Time = 15;
     player3Time = 15;
+    player4Time = 15;
     CurrentPlayer = 1;
     firstCard = null;
     secondCard = null;
     lockBoard = false;
-    gameStarted = true; 
+    gameStarted = true;
 
     document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
     document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
     document.getElementById('MatchedPairs3').textContent = FoundPairsPlayer3;
+    document.getElementById('MatchedPairs4').textContent = FoundPairsPlayer4;
     document.getElementById('Time1').textContent = player1Time;
     document.getElementById('Time2').textContent = player2Time;
     document.getElementById('Time3').textContent = player3Time;
+    document.getElementById('Time4').textContent = player4Time;
 
     startPlayerTurn();
 }
@@ -118,7 +123,7 @@ function startPlayerTurn() {
                 handleTimeout();
             }
         }, 1000);
-    } else {
+    } else if (CurrentPlayer === 3) {
         player3Time = 15;
         document.getElementById('Time3').textContent = player3Time;
         timerInterval = setInterval(() => {
@@ -128,7 +133,19 @@ function startPlayerTurn() {
                 handleTimeout();
             }
         }, 1000);
+    } else {
+        player4Time = 15;
+        document.getElementById('Time4').textContent = player4Time;
+        timerInterval = setInterval(() => {
+            player4Time--;
+            document.getElementById('Time4').textContent = player4Time;
+            if (player4Time === 0) {
+                handleTimeout();
+            }
+        }, 1000);
     }
+
+    resetPlayerTime();
 }
 
 function handleTimeout() {
@@ -144,15 +161,12 @@ function handleTimeout() {
 }
 
 function switchPlayer() {
-    if (CurrentPlayer === 1) {
-        CurrentPlayer = 2;
-    } else if (CurrentPlayer === 2) {
-        CurrentPlayer = 3;
-    } else {
-        CurrentPlayer = 1;
-    }
+    resetPlayerTime(); 
+
+    CurrentPlayer = CurrentPlayer === 1 ? 2 : (CurrentPlayer === 2 ? 3 : (CurrentPlayer === 3 ? 4 : 1));
     startPlayerTurn();
 }
+
 
 function updatePoints() {
     if (CurrentPlayer === 1) {
@@ -161,16 +175,78 @@ function updatePoints() {
     } else if (CurrentPlayer === 2) {
         FoundPairsPlayer2++;
         document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
-    } else {
+    } else if (CurrentPlayer === 3) {
         FoundPairsPlayer3++;
         document.getElementById('MatchedPairs3').textContent = FoundPairsPlayer3;
-    }
-    if (FoundPairsPlayer1 + FoundPairsPlayer2 + FoundPairsPlayer3 === (Rows * Collums) / 2) {
-        clearInterval(timerInterval);
-        determineWinner();
     } else {
-        resetPlayerTime();
+        FoundPairsPlayer4++;
+        document.getElementById('MatchedPairs4').textContent = FoundPairsPlayer4;
     }
+
+    // Verificar se todas as cartas foram viradas
+    const totalPairs = (Rows * Collums) / 2;
+    const totalFoundPairs = FoundPairsPlayer1 + FoundPairsPlayer2 + FoundPairsPlayer3 + FoundPairsPlayer4;
+    if (totalFoundPairs === totalPairs) {
+        determineWinner();
+    }
+}
+
+function handleCardClick(event) {
+    if (!gameStarted || lockBoard) return;
+    const clickedCard = event.target;
+    if (clickedCard === firstCard) return;
+
+    const [r, c] = clickedCard.id.split('|');
+    clickedCard.src = '/Media/' + Board[r][c] + '.jpg';
+
+    if (!firstCard) {
+        firstCard = clickedCard;
+        return;
+    }
+
+    secondCard = clickedCard;
+    lockBoard = true;
+
+    if (firstCard.src === secondCard.src) {
+        disableCards();
+        updatePoints();
+    } else {
+        unflipCards();
+    }
+
+    if (CurrentPlayer === 1) {
+        TotalFlippedCardsPlayer1++;
+    } else if (CurrentPlayer === 2) {
+        TotalFlippedCardsPlayer2++;
+    } else if (CurrentPlayer === 3) {
+        TotalFlippedCardsPlayer3++;
+    } else {
+        TotalFlippedCardsPlayer4++;
+    }
+}
+
+function disableCards() {
+    firstCard.removeEventListener('click', handleCardClick);
+    secondCard.removeEventListener('click', handleCardClick);
+    resetBoard();
+    resetPlayerTime(); 
+
+    
+    const totalPairs = (Rows * Collums) / 2;
+    const totalFoundPairs = FoundPairsPlayer1 + FoundPairsPlayer2 + FoundPairsPlayer3 + FoundPairsPlayer4;
+    if (totalFoundPairs === totalPairs) {
+        determineWinner();
+    }
+}
+
+function unflipCards() {
+    setTimeout(() => {
+        firstCard.src = '/Media/backcard.jpeg';
+        secondCard.src = '/Media/backcard.jpeg';
+        resetBoard();
+        resetPlayerTime();
+        switchPlayer();
+    }, 1500);
 }
 
 function resetPlayerTime() {
@@ -195,7 +271,7 @@ function resetPlayerTime() {
                 handleTimeout();
             }
         }, 1000);
-    } else {
+    } else if (CurrentPlayer === 3) {
         player3Time = 15;
         document.getElementById('Time3').textContent = player3Time;
         timerInterval = setInterval(() => {
@@ -205,11 +281,25 @@ function resetPlayerTime() {
                 handleTimeout();
             }
         }, 1000);
+    } else {
+        player4Time = 15;
+        document.getElementById('Time4').textContent = player4Time;
+        timerInterval = setInterval(() => {
+            player4Time--;
+            document.getElementById('Time4').textContent = player4Time;
+            if (player4Time === 0) {
+                handleTimeout();
+            }
+        }, 1000);
     }
 }
 
+function resetBoard() {
+    [firstCard, secondCard, lockBoard] = [null, null, false];
+}
+
 function determineWinner() {
-    let maxPairs = Math.max(FoundPairsPlayer1, FoundPairsPlayer2, FoundPairsPlayer3);
+    let maxPairs = Math.max(FoundPairsPlayer1, FoundPairsPlayer2, FoundPairsPlayer3, FoundPairsPlayer4);
     let winners = [];
 
     if (FoundPairsPlayer1 === maxPairs) {
@@ -220,6 +310,9 @@ function determineWinner() {
     }
     if (FoundPairsPlayer3 === maxPairs) {
         winners.push(3);
+    }
+    if (FoundPairsPlayer4 === maxPairs) {
+        winners.push(4);
     }
 
     if (winners.length === 1) {
@@ -233,6 +326,8 @@ function determineWinner() {
                 minFlippedCards = TotalFlippedCardsPlayer2;
             } else if (winner === 3 && TotalFlippedCardsPlayer3 < minFlippedCards) {
                 minFlippedCards = TotalFlippedCardsPlayer3;
+            } else if (winner === 4 && TotalFlippedCardsPlayer4 < minFlippedCards) {
+                minFlippedCards = TotalFlippedCardsPlayer4;
             }
         }
         winners = winners.filter(winner => {
@@ -241,6 +336,8 @@ function determineWinner() {
             } else if (winner === 2 && TotalFlippedCardsPlayer2 === minFlippedCards) {
                 return true;
             } else if (winner === 3 && TotalFlippedCardsPlayer3 === minFlippedCards) {
+                return true;
+            } else if (winner === 4 && TotalFlippedCardsPlayer4 === minFlippedCards) {
                 return true;
             }
             return false;
@@ -256,49 +353,7 @@ function determineWinner() {
     resetGame();
 }
 
-function handleCardClick(event) {
-    if (!gameStarted || lockBoard) return; 
-    const clickedCard = event.target;
-    if (clickedCard === firstCard) return;
 
-    const [r, c] = clickedCard.id.split('|');
-    clickedCard.src = '/Media/' + Board[r][c] + '.jpg';
-
-    if (!firstCard) {
-        firstCard = clickedCard;
-        return;
-    }
-
-    secondCard = clickedCard;
-    lockBoard = true;
-
-    if (firstCard.src === secondCard.src) {
-        disableCards();
-        updatePoints();
-    } else {
-        unflipCards();
-    }
-}
-
-function disableCards() {
-    firstCard.removeEventListener('click', handleCardClick);
-    secondCard.removeEventListener('click', handleCardClick);
-    resetBoard();
-}
-
-function unflipCards() {
-    setTimeout(() => {
-        firstCard.src = '/Media/backcard.jpeg';
-        secondCard.src = '/Media/backcard.jpeg';
-        resetBoard();
-        resetPlayerTime();
-        switchPlayer();
-    }, 1500);
-}
-
-function resetBoard() {
-    [firstCard, secondCard, lockBoard] = [null, null, false];
-}
 
 document.getElementById('btnResetGame').addEventListener('click', resetGame);
 
@@ -307,25 +362,25 @@ function resetGame() {
     FoundPairsPlayer1 = 0;
     FoundPairsPlayer2 = 0;
     FoundPairsPlayer3 = 0;
-    TotalFlippedCardsPlayer1 = 0;
-    TotalFlippedCardsPlayer2 = 0;
-    TotalFlippedCardsPlayer3 = 0;
+    FoundPairsPlayer4 = 0;
     player1Time = 15;
     player2Time = 15;
     player3Time = 15;
+    player4Time = 15;
     CurrentPlayer = 1;
     Board = [];
     firstCard = null;
     secondCard = null;
     lockBoard = false;
-    gameStarted = false; 
     document.getElementById('Jogo').innerHTML = '';
     document.getElementById('MatchedPairs1').textContent = FoundPairsPlayer1;
     document.getElementById('MatchedPairs2').textContent = FoundPairsPlayer2;
     document.getElementById('MatchedPairs3').textContent = FoundPairsPlayer3;
+    document.getElementById('MatchedPairs4').textContent = FoundPairsPlayer4;
     document.getElementById('Time1').textContent = player1Time;
     document.getElementById('Time2').textContent = player2Time;
     document.getElementById('Time3').textContent = player3Time;
+    document.getElementById('Time4').textContent = player4Time;
     Shuffle();
     createBoard();
 }
